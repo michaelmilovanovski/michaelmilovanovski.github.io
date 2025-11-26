@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NBA Free-Throw Performance Analysis — Michael Milovanovski</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo-area">
+        <div class="logo-circle">MM</div>
+        <div>
+          <h1 class="site-title">Michael Milovanovski</h1>
+          <p class="site-subtitle">Data Analyst</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="section">
+      <div class="container article-container">
+        <a href="projects.html" class="text-link back-link">← Back to projects</a>
+        <p class="eyebrow">Basketball Analytics</p>
+        <h1>NBA Free-Throw Performance Analysis</h1>
+        <p class="article-meta">
+          <strong>Role:</strong> End-to-end data analyst &nbsp;•&nbsp;
+          <strong>Tools:</strong> SQL (Oracle), Tableau, Excel
+        </p>
+
+        <section class="article-section">
+          <h2>Overview</h2>
+          <p>
+            Free throws are one of the most efficient scoring opportunities in basketball,
+            but not all teams and players convert them equally. This project analyzes NBA
+            free-throw performance across multiple seasons, focusing on:
+          </p>
+          <ul>
+            <li>Which teams generate the most free-throw attempts</li>
+            <li>Which players consistently convert at a high percentage</li>
+            <li>How free-throw efficiency relates to overall scoring</li>
+          </ul>
+        </section>
+
+        <section class="article-section">
+          <h2>Dataset & Tools</h2>
+          <ul>
+            <li>Play-by-play / box score data from multiple NBA seasons</li>
+            <li>Loaded into an Oracle database for querying with SQL</li>
+            <li>Visualizations built in Tableau, exported as PNGs for the portfolio</li>
+          </ul>
+        </section>
+
+        <section class="article-section">
+          <h2>Process</h2>
+          <ol>
+            <li>Imported and cleaned raw game and player statistics.</li>
+            <li>Created aggregated tables at player-season and team-season levels.</li>
+            <li>Calculated free-throw attempts per game and free-throw percentage.</li>
+            <li>Identified top performers and trends across seasons.</li>
+            <li>Designed visualizations to highlight key comparisons.</li>
+          </ol>
+
+          <pre class="code-block"><code>-- Example: top free-throw shooters by efficiency (min volume filter)
+SELECT
+    player_name,
+    season,
+    total_fta,
+    total_ftm,
+    ROUND(total_ftm / NULLIF(total_fta, 0), 3) AS ft_percentage
+FROM player_season_ft
+WHERE total_fta &gt;= 200
+ORDER BY ft_percentage DESC;</code></pre>
+        </section>
+
+        <section class="article-section">
+          <h2>Key Insights</h2>
+          <ul>
+            <li>
+              A small group of high-usage players account for a large share of total
+              free-throw attempts, especially on teams built around driving guards or primary scorers.
+            </li>
+            <li>
+              Teams that draw a high volume of free throws but convert at below-average
+              percentages leave significant points on the table over a season.
+            </li>
+            <li>
+              Several role players demonstrate elite free-throw efficiency, providing
+              hidden value in late-game situations.
+            </li>
+          </ul>
+        </section>
+
+        <section class="article-section">
+          <h2>Visuals</h2>
+          <p>
+            In the full project, this section includes PNGs exported from Tableau,
+            such as:
+          </p>
+          <ul>
+            <li>Free-throw attempts vs. percentage by player</li>
+            <li>Team-level free-throw efficiency by season</li>
+            <li>Top 10 free-throw shooters by volume and efficiency</li>
+          </ul>
+          <p class="article-note">
+            <em>Tip: add your visual images to an <code>images/</code> folder and reference them here.</em>
+          </p>
+        </section>
+
+        <section class="article-section">
+          <h2>Takeaways</h2>
+          <p>
+            This project demonstrates my ability to work end-to-end: from data preparation
+            in SQL to building clear visualizations in Tableau and summarizing findings in
+            a way that’s accessible to non-technical audiences.
+          </p>
+        </section>
+
+        <section class="article-section article-links">
+          <h2>Links</h2>
+          <ul>
+            <li><a href="#" class="text-link">View GitHub repository (add link)</a></li>
+            <li><a href="#" class="text-link">Download project PDF (add link)</a></li>
+          </ul>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Michael Milovanovski. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Michael Milovanovski</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo-area">
+        <div class="logo-circle">MM</div>
+        <div>
+          <h1 class="site-title">Michael Milovanovski</h1>
+          <p class="site-subtitle">Data Analyst</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <p>
+            A selection of projects demonstrating data cleaning, exploratory analysis,
+            visualization, and clear communication of results.
+          </p>
+        </div>
+
+        <div class="grid projects-grid">
+          <article class="card project-card">
+            <div class="card-tag">Basketball Analytics</div>
+            <h3>NBA Free-Throw Performance Analysis</h3>
+            <p>
+              Evaluating free-throw volume and efficiency for teams and players across seasons,
+              with a focus on how free throws contribute to scoring stability.
+            </p>
+            <ul class="pill-list">
+              <li>SQL</li>
+              <li>Tableau</li>
+              <li>Exploratory Analysis</li>
+            </ul>
+            <div class="card-actions">
+              <a href="project-nba-free-throws.html" class="text-link">View case study →</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-tag">Automotive Analytics</div>
+            <h3>Vehicle Sales & Pricing Analysis</h3>
+            <p>
+              Analyzing relationships between price, mileage, condition, make, and state to
+              understand which vehicles are overpriced or underpriced versus reference values.
+            </p>
+            <ul class="pill-list">
+              <li>SQL</li>
+              <li>Data Cleaning</li>
+              <li>Visualization</li>
+            </ul>
+            <div class="card-actions">
+              <a href="project-vehicle-sales.html" class="text-link">View case study →</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-tag">In Progress</div>
+            <h3>Future Analytics Projects</h3>
+            <p>
+              Additional projects (such as customer retention, time-series trends, and A/B testing
+              simulations) will be added as they are completed.
+            </p>
+            <ul class="pill-list">
+              <li>Experimentation</li>
+              <li>Business Questions</li>
+              <li>Storytelling</li>
+            </ul>
+            <div class="card-actions">
+              <span class="badge subtle">Coming soon</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Michael Milovanovski. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
