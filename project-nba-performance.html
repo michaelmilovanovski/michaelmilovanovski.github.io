@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NBA Team Performance Analysis — Michael Milovanovski</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo-area">
+      <div class="logo-circle">MM</div>
+      <div>
+        <h1 class="site-title">Michael Milovanovski</h1>
+        <p class="site-subtitle">Data Analyst</p>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article class="section">
+<div class="container article-container">
+
+<a href="projects.html" class="text-link back-link">← Back to projects</a>
+<p class="eyebrow">Basketball Analytics</p>
+<h1>NBA Team Performance Analysis</h1>
+
+<p class="article-meta">
+  <strong>Tools:</strong> SQL (Oracle), Python (pandas, matplotlib) •
+  <strong>Role:</strong> End-to-end data analyst
+</p>
+
+<section class="article-section">
+<h2>Overview</h2>
+<p>
+This project delivers a comprehensive, data-driven evaluation of historical NBA franchise
+performance. The analysis focuses on wins, losses, win percentage, year-over-year improvement,
+and multi-season dominance patterns across decades.
+</p>
+<p>
+The project reveals which franchises achieved the best single seasons, the worst seasons,
+the biggest improvements, and the strongest 5-year dominance windows. A deep-dive also
+examines the Lakers' strongest five-year run.
+</p>
+</section>
+
+<section class="article-section">
+<h2>Key Questions</h2>
+<ul>
+  <li>Which teams recorded the best and worst regular seasons in NBA history?</li>
+  <li>Which franchises had the strongest five-year stretches?</li>
+  <li>Which teams showed the largest single-season jump in wins?</li>
+  <li>Which teams have the best all-time win percentage?</li>
+  <li>What was the best 5-year run in Lakers history?</li>
+</ul>
+</section>
+
+<section class="article-section">
+<h2>Methodology</h2>
+<ul>
+  <li>Cleaned and aggregated season-level franchise data (wins, losses, win%).</li>
+  <li>Built SQL queries to compute rolling 5-year totals and YOY improvements.</li>
+  <li>Used Python (pandas + matplotlib) to build polished visualizations.</li>
+  <li>Documented findings and insights in a structured case study.</li>
+</ul>
+
+<pre class="code-block"><code>-- Example: Top 5 single-season win percentages
+SELECT team_name, season, wins, losses,
+       ROUND(wins / (wins + losses), 3) AS win_pct
+FROM team_seasons
+ORDER BY win_pct DESC
+FETCH FIRST 5 ROWS ONLY;</code></pre>
+</section>
+
+<section class="article-section">
+<h2>Results & Visuals</h2>
+
+<h3>🏆 Best Regular Season Records</h3>
+<img src="Images/best_regular_season_records.png" width="100%" alt="Best regular season records">
+
+<h3>📉 Worst Regular Season Records</h3>
+<img src="Images/worst_records_in_nba_history.png" width="100%" alt="Worst NBA records">
+
+<h3>🔺 Largest Win Increase (YoY)</h3>
+<img src="Images/largest_win_increase_from_previous_season.png" width="100%" alt="Largest win increase">
+
+<h3>📊 Top 5 Records Over a 5-Year Span</h3>
+<img src="Images/top_records_over_5_year_span.png" width="100%" alt="Top 5-year spans">
+
+<h3>📈 Total Wins & Losses (Sorted by Win%)</h3>
+<img src="Images/total_wins_and_losses.png" width="100%" alt="All-time wins and losses">
+
+<h3>🟣🟨 Lakers’ Best 5-Year Run</h3>
+<img src="Images/best_5_year_record_lakers.png" width="100%" alt="Best Lakers 5-year run">
+
+</section>
+
+<section class="article-section">
+<h2>Key Insights</h2>
+<ul>
+  <li>Franchises like the Lakers, Celtics, and Spurs demonstrate long-term excellence.</li>
+  <li>Large YOY improvements often align with major roster or coaching changes.</li>
+  <li>Five-year spans reveal deeper dominance patterns than single seasons alone.</li>
+  <li>Win percentage is the strongest measure of long-term franchise consistency.</li>
+</ul>
+</section>
+
+<section class="article-section article-links">
+<h2>Links</h2>
+<ul>
+  <li><a href="https://github.com/michaelmilovanovski" target="_blank">GitHub Repository</a></li>
+  <li><a href="#" class="text-link">Download project PDF (optional)</a></li>
+</ul>
+</section>
+
+</div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Michael Milovanovski. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+

@@ -3,146 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vehicle Sales & Pricing Analysis — Michael Milovanovski</title>
+  <title>Vehicle Sales Analysis — Michael Milovanovski</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo-area">
-        <div class="logo-circle">MM</div>
-        <div>
-          <h1 class="site-title">Michael Milovanovski</h1>
-          <p class="site-subtitle">Data Analyst</p>
-        </div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo-area">
+      <div class="logo-circle">MM</div>
+      <div>
+        <h1 class="site-title">Michael Milovanovski</h1>
+        <p class="site-subtitle">Data Analyst</p>
       </div>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="projects.html" class="active">Projects</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
     </div>
-  </header>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <article class="section">
-      <div class="container article-container">
-        <a href="projects.html" class="text-link back-link">← Back to projects</a>
-        <p class="eyebrow">Automotive Analytics</p>
-        <h1>Vehicle Sales &amp; Pricing Analysis</h1>
-        <p class="article-meta">
-          <strong>Role:</strong> End-to-end data analyst &nbsp;•&nbsp;
-          <strong>Tools:</strong> SQL (Oracle), Excel, Visualization tools
-        </p>
+<main>
+<article class="section">
+<div class="container article-container">
 
-        <section class="article-section">
-          <h2>Overview</h2>
-          <p>
-            This project explores a large dataset of vehicle sales and prices to understand how
-            factors like make, model, body type, mileage, condition, and state influence selling
-            price, and how those prices compare to reference market values.
-          </p>
-        </section>
+<a href="projects.html" class="text-link back-link">← Back to projects</a>
+<p class="eyebrow">Automotive Analytics</p>
+<h1>Vehicle Sales & Pricing Analysis (2015–2020)</h1>
 
-        <section class="article-section">
-          <h2>Dataset & Schema</h2>
-          <p>The core table includes fields such as:</p>
-          <ul>
-            <li><code>year</code>, <code>make</code>, <code>model</code>, <code>trim</code>, <code>body</code></li>
-            <li><code>transmission</code>, <code>state</code>, <code>condition</code>, <code>odometer</code></li>
-            <li><code>mmr</code> (market reference value), <code>sellingprice</code>, <code>saledate</code></li>
-          </ul>
-          <p>
-            Data was cleaned to remove invalid rows, fix formatting issues, and ensure that numeric
-            and date fields were stored in appropriate data types.
-          </p>
-        </section>
+<p class="article-meta">
+  <strong>Tools:</strong> SQL (Oracle), Python (pandas, seaborn, matplotlib) •
+  <strong>Role:</strong> End-to-end data analyst
+</p>
 
-        <section class="article-section">
-          <h2>Process</h2>
-          <ol>
-            <li>Imported a raw CSV into Oracle and created a cleaned table.</li>
-            <li>Standardized date formats and removed rows with clearly invalid values.</li>
-            <li>Created derived fields (e.g., price vs. MMR ratio, mileage buckets, condition buckets).</li>
-            <li>Aggregated results by make, model, body type, and state.</li>
-            <li>Visualized the distribution of prices and identified outliers.</li>
-          </ol>
+<section class="article-section">
+<h2>Overview</h2>
+<p>
+This project analyzes trends and pricing behaviors in the U.S. used car market using
+SQL for preprocessing and Python for visualization. The dataset (from Kaggle) provides
+vehicle-level information including make, model, mileage, condition, sale date, and price.
+</p>
+<p>
+The goal is to understand how mileage, seasonality, state, make/model popularity,
+and body type impact average prices and sales volume.
+</p>
+</section>
 
-          <pre class="code-block"><code>-- Example: price vs. MMR ratio by make and model
-SELECT
-    make,
-    model,
-    COUNT(*) AS vehicle_count,
-    ROUND(AVG(sellingprice), 0) AS avg_sellingprice,
-    ROUND(AVG(mmr), 0) AS avg_mmr,
-    ROUND(AVG(sellingprice) / NULLIF(AVG(mmr), 0), 3) AS price_to_mmr_ratio
+<section class="article-section">
+<h2>Business Questions</h2>
+<ul>
+  <li>How do average selling prices change month-to-month?</li>
+  <li>Which car makes and models sell the most?</li>
+  <li>How does mileage affect price and sales volume?</li>
+  <li>Which states record the highest sales counts?</li>
+  <li>How do average prices vary by body type?</li>
+</ul>
+</section>
+
+<section class="article-section">
+<h2>Methodology</h2>
+<ul>
+  <li>Filtered dataset to 2015–2020 records using SQL.</li>
+  <li>Cleaned missing values and standardized body type labels.</li>
+  <li>Built summary tables and aggregates in SQL.</li>
+  <li>Used Python (pandas, seaborn, matplotlib) for EDA and visuals.</li>
+</ul>
+
+<pre class="code-block"><code>-- Example SQL: Average price by body type
+SELECT body_type,
+       ROUND(AVG(sellingprice), 2) AS avg_price,
+       COUNT(*) AS vehicles_sold
 FROM car_sales_clean
-GROUP BY make, model
-HAVING COUNT(*) &gt;= 50
-ORDER BY price_to_mmr_ratio DESC;</code></pre>
-        </section>
+GROUP BY body_type
+ORDER BY avg_price DESC;</code></pre>
+</section>
 
-        <section class="article-section">
-          <h2>Key Insights</h2>
-          <ul>
-            <li>
-              Certain brands and models consistently sell above their reference market value,
-              suggesting strong demand or favorable perception.
-            </li>
-            <li>
-              High-mileage vehicles with good “condition” scores can still achieve solid prices
-              when paired with strong brands or popular body types (e.g., SUVs).
-            </li>
-            <li>
-              Some states show systematically higher or lower price-to-MMR ratios, hinting at
-              regional pricing differences.
-            </li>
-          </ul>
-        </section>
+<section class="article-section">
+<h2>Results & Visuals</h2>
 
-        <section class="article-section">
-          <h2>Visuals</h2>
-          <p>Example visuals used in the full project:</p>
-          <ul>
-            <li>Distribution of selling prices by body type</li>
-            <li>Average price-to-MMR ratio by make and model</li>
-            <li>Scatter plot of odometer vs. selling price</li>
-          </ul>
-          <p class="article-note">
-            <em>Tip: export your charts as PNG files and embed them here from an <code>images/</code> folder.</em>
-          </p>
-        </section>
+<h3>📈 Average Selling Price by Month (2015)</h3>
+<img src="images/avg_price_over_time.png" width="100%">
 
-        <section class="article-section">
-          <h2>Takeaways</h2>
-          <p>
-            This project highlights my ability to work with transactional data, engineer
-            meaningful features (such as price ratios and condition buckets), and translate
-            analytical findings into insights that could support pricing strategy or inventory
-            decisions.
-          </p>
-        </section>
+<h3>🚘 Top 10 Best-Selling Car Models</h3>
+<img src="images/top_selling_car_models.png" width="100%">
 
-        <section class="article-section article-links">
-          <h2>Links</h2>
-          <ul>
-            <li><a href="#" class="text-link">View GitHub repository (add link)</a></li>
-            <li><a href="#" class="text-link">Download project PDF (add link)</a></li>
-          </ul>
-        </section>
-      </div>
-    </article>
-  </main>
+<h3>⏱️ Odometer vs Sales & Price</h3>
+<img src="images/odometer_vs_number_of_sales_and_price.png" width="100%">
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Michael Milovanovski. All rights reserved.</p>
-    </div>
-  </footer>
+<h3>🗺️ Number of Car Sales by State</h3>
+<img src="images/car_sales_by_state.png" width="100%">
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<h3>🚗 Average Price by Body Type</h3>
+<img src="images/avg_price_by_body_type.png" width="100%">
+</section>
+
+<section class="article-section">
+<h2>Key Insights</h2>
+<ul>
+  <li>Seasonality influences pricing, with distinct early-year and mid-summer peaks.</li>
+  <li>Lower mileage cars sell for the highest prices but in lower volumes.</li>
+  <li>California, Texas, and Florida lead U.S. sales due to large populations.</li>
+  <li>SUVs and trucks consistently command premium prices.</li>
+</ul>
+</section>
+
+<section class="article-section article-links">
+<h2>Links</h2>
+<ul>
+  <li><a href="https://github.com/michaelmilovanovski" target="_blank">GitHub Repository</a></li>
+  <li><a href="#" class="text-link">Download project PDF (optional)</a></li>
+</ul>
+</section>
+
+</div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Michael Milovanovski. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
+
