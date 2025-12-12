@@ -1,0 +1,787 @@
+"MAKE","MODEL","COUNT(*)"
+"Nissan","Altima",19349
+"Ford","F-150",14479
+"Ford","Fusion",12946
+"Toyota","Camry",12545
+"Ford","Escape",11861
+"Ford","Focus",10394
+"Honda","Accord",9127
+"BMW","3 Series",8204
+"Dodge","Grand Caravan",7941
+"Chevrolet","Impala",7923
+"Ford","Explorer",7707
+"Honda","Civic",7433
+"Infiniti","G Sedan",7417
+"Toyota","Corolla",7354
+"Chevrolet","Malibu",7028
+"Hyundai","Sonata",6914
+"Nissan","Maxima",6611
+"Chevrolet","Silverado 1500",6362
+"Chevrolet","Cruze",6348
+"Hyundai","Elantra",6262
+"Chrysler","Town and Country",5994
+"Ford","Edge",5915
+"Nissan","Rogue",5589
+"Nissan","Sentra",5465
+"Mercedes-Benz","C-Class",5397
+"Ford","Mustang",4950
+"Chevrolet","Equinox",4916
+"Jeep","Grand Cherokee",4686
+"Volkswagen","Jetta",4660
+"Ford","Taurus",4649
+"Dodge","Charger",4539
+"Kia","Optima",4388
+"BMW","5 Series",4172
+"Chrysler","200",4048
+"Dodge","Avenger",3962
+"Chrysler","300",3903
+"Mercedes-Benz","E-Class",3884
+"Jeep","Wrangler",3711
+"Honda","Odyssey",3500
+"Kia","Sorento",3408
+"Volkswagen","Passat",3327
+"Honda","CR-V",3265
+"Ram","1500",3226
+"Toyota","RAV4",3209
+"Dodge","Journey",3100
+"Chevrolet","Tahoe",3094
+"Nissan","Versa",3092
+"Nissan","Murano",2904
+"Mazda","Mazda3",2865
+"Ford","Expedition",2826
+"Toyota","Sienna",2825
+"Kia","Forte",2751
+"Kia","Soul",2743
+"Ford","F-250 Super Duty",2559
+"Jeep","Liberty",2556
+"BMW","X5",2462
+"Chevrolet","Suburban",2401
+"Lexus","RX 350",2380
+"Ford","Fiesta",2375
+"GMC","Sierra 1500",2333
+"Audi","A4",2261
+"Dodge","Ram Pickup 1500",2234
+"Toyota","Highlander",2232
+"MINI","Cooper",2209
+"Nissan","Pathfinder",2152
+"Acura","TL",2135
+"Honda","Pilot",2068
+"Dodge","Durango",2060
+"Hyundai","Accent",2041
+"GMC","Acadia",2034
+"Chevrolet","Traverse",2012
+"Chevrolet","Camaro",1950
+"Lexus","IS 250",1939
+"Cadillac","CTS",1934
+"Lexus","ES 350",1921
+"Mercedes-Benz","M-Class",1908
+"Ford","Ranger",1851
+"Toyota","Prius",1840
+"Ford","E-Series Van",1823
+"Chevrolet","Sonic",1783
+"Jeep","Patriot",1776
+"Lincoln","MKZ",1704
+"Pontiac","G6",1686
+"Chevrolet","Cobalt",1653
+"Hyundai","Santa Fe",1645
+"Infiniti","G Coupe",1593
+"Acura","MDX",1581
+"Nissan","Leaf",1514
+"Mazda","Mazda6",1512
+"Mercedes-Benz","S-Class",1511
+"Kia","Rio",1482
+"Chevrolet","Silverado 2500HD",1443
+"Nissan","Frontier",1411
+"Subaru","Outback",1410
+"GMC","Yukon",1373
+"Jeep","Compass",1365
+"Chrysler","Sebring",1347
+"Toyota","4Runner",1339
+"Dodge","Caliber",1335
+"Toyota","Tundra",1314
+"Ford","E-Series Wagon",1282
+"GMC","Yukon XL",1262
+"Nissan","Xterra",1254
+"Cadillac","SRX",1252
+"BMW","X3",1250
+"Chrysler","PT Cruiser",1231
+"Toyota","Yaris",1225
+"Kia","Sportage",1224
+"Ford","Flex",1207
+"Dodge","Challenger",1196
+"BMW","7 Series",1189
+"Buick","LaCrosse",1188
+"Cadillac","Escalade",1183
+"Lincoln","MKX",1160
+"Chevrolet","Avalanche",1154
+"Volvo","S60",1153
+"Toyota","Avalon",1149
+"Subaru","Legacy",1141
+"Toyota","Tacoma",1140
+"GMC","Terrain",1136
+"Chevrolet","TrailBlazer",1133
+"Ford","F-350 Super Duty",1123
+"Infiniti","G35",1121
+"Acura","TSX",1119
+"Chevrolet","Impala Limited",1102
+"Chevrolet","HHR",1092
+"Buick","Enclave",1070
+"Chevrolet","Express Cargo",1063
+"Mercedes-Benz","GL-Class",1061
+"Pontiac","Grand Prix",1048
+"Mitsubishi","Lancer",1034
+"Dodge","Dart",1028
+"Chevrolet","Captiva Sport",1016
+"Subaru","Forester",954
+"Subaru","Impreza",953
+"Kia","Sedona",946
+"Ram","2500",924
+"Hyundai","Genesis",902
+"Infiniti","M",898
+"Lincoln","MKS",878
+"Hyundai","Tucson",873
+"Mercedes-Benz","GLK-Class",857
+"Saturn","VUE",852
+"Mazda","CX-9",845
+"Lincoln","Navigator",833
+"Audi","A6",831
+"Chevrolet","Colorado",813
+"Nissan","Titan",802
+"Nissan","Quest",802
+"Volkswagen","New Beetle",799
+"Nissan","Armada",789
+"Chevrolet","Aveo",770
+"Lexus","GS 350",766
+"Ford","Econoline Cargo",750
+"Land Rover","Range Rover Sport",749
+"Volvo","XC90",734
+"Ford","Transit Connect",700
+"Scion","tC",694
+"BMW","6 Series",676
+"Jeep","Commander",671
+"GMC","Savana Cargo",662
+"Nissan","Versa Note",658
+"Volkswagen","CC",649
+"Ford","Fusion Hybrid",642
+"Cadillac","DeVille",634
+"Cadillac","Escalade ESV",625
+"Mazda","Mazda5",623
+"GMC","Envoy",614
+"Dodge","Nitro",610
+"Hyundai","Veloster",608
+"Jeep","Cherokee",606
+"Dodge","Dakota",603
+"Toyota","Camry Hybrid",598
+"Buick","Regal",598
+"Toyota","Sequoia",596
+"Mitsubishi","Outlander",588
+"Toyota","Venza",578
+"Lexus","LS 460",574
+"Mitsubishi","Galant",573
+"Porsche","Cayenne",562
+"FIAT","500",557
+"Mitsubishi","Outlander Sport",547
+"Hyundai","Sonata Hybrid",546
+"Audi","Q5",542
+"Infiniti","Q50",539
+"Volkswagen","Tiguan",537
+"Mercury","Grand Marquis",536
+"Chevrolet","Corvette",534
+"Cadillac","DTS",509
+"Mazda","CX-5",507
+"Chevrolet","Volt",506
+"Dodge","Ram Pickup 2500",505
+"Scion","xB",504
+"MINI","Cooper Countryman",498
+"Buick","LeSabre",498
+"Buick","Lucerne",496
+"Saturn","ION",481
+"Audi","Q7",480
+"Nissan","Juke",479
+"Mercedes-Benz","CLK-Class",477
+"Mercedes-Benz","CLS-Class",476
+"Kia","Spectra",468
+"Saturn","Aura",465
+"Volkswagen","Beetle",457
+"GMC","Sierra 2500HD",453
+"Honda","Fit",441
+"Infiniti","QX56",438
+"Pontiac","Grand Am",436
+"Mercedes-Benz","SL-Class",435
+"HUMMER","H3",429
+"Acura","RDX",420
+"Mercury","Mountaineer",420
+"Mazda","Mazda2",418
+"Volkswagen","GTI",416
+"Lexus","CT 200h",412
+"Volvo","XC60",412
+"Lexus","RX 330",411
+"BMW","1 Series",405
+"Ford","Explorer Sport Trac",403
+"Chevrolet","Monte Carlo",398
+"Volvo","S40",396
+"Land Rover","Range Rover",396
+"smart","fortwo",395
+"Infiniti","FX",394
+"Mitsubishi","Eclipse",394
+"Jaguar","XF",391
+"Lexus","LS 430",386
+"Toyota","FJ Cruiser",385
+"Mazda","CX-7",384
+"Chevrolet","Cavalier",384
+"Buick","Verano",382
+"Lexus","ES 300",381
+"Dodge","Magnum",375
+"Toyota","Camry Solara",368
+"MINI","Cooper Clubman",359
+"Audi","A5",359
+"Ford","Five Hundred",358
+"Saab","9-3",354
+"Lincoln","Town Car",352
+"Saturn","S-Series",350
+"Toyota","Matrix",349
+"Chevrolet","Uplander",342
+"Volkswagen","Touareg",338
+"Lexus","RX 300",334
+"Mercedes-Benz","R-Class",332
+"BMW","X1",331
+"Chevrolet","Blazer",329
+"Infiniti","FX35",325
+"Infiniti","G Convertible",323
+"Chevrolet","Spark",322
+"Infiniti","JX",322
+"Mercedes-Benz","SLK-Class",321
+"Volkswagen","Golf",319
+"Hyundai","Azera",314
+"Ford","C-Max Hybrid",312
+"Mercury","Mariner",312
+"Lexus","ES 330",309
+"Mazda","Tribute",309
+"Honda","Element",308
+"FIAT","500L",305
+"Hyundai","Santa Fe Sport",304
+"HUMMER","H2",304
+"Cadillac","STS",303
+"Honda","Crosstour",300
+"Audi","A8",298
+"BMW","M3",297
+"Hyundai","Genesis Coupe",294
+"BMW","4 Series",293
+"Chevrolet","Express",293
+"Dodge","Stratus",291
+"Saturn","Outlook",288
+"Buick","Rendezvous",287
+"Nissan","Cube",286
+"Suzuki","SX4",281
+"Volvo","S80",279
+"Ford","Freestyle",278
+"BMW","Z4",276
+"Mercury","Milan",274
+"Porsche","Panamera",268
+"Pontiac","Torrent",266
+"BMW","X6",263
+"Ford","Freestar",262
+"Audi","A3",259
+"Lexus","GX 460",257
+"Infiniti","M35",257
+"Ram","3500",253
+"Pontiac","Vibe",246
+"Dodge","Neon",246
+"Hyundai","Elantra GT",246
+"Kia","Cadenza",245
+"Jaguar","S-Type",240
+"GMC","Envoy XL",239
+"Suzuki","Forenza",239
+"Porsche","Boxster",235
+"Ford","C-Max Energi",234
+"Volkswagen","Routan",232
+"Chrysler","Pacifica",229
+"Porsche","911",229
+"Honda","Insight",228
+"Chrysler","Aspen",228
+"Dodge","Caravan",227
+"Buick","Century",227
+"Mazda","MX-5 Miata",227
+"Chevrolet","S-10",221
+"Mercury","Sable",221
+"Lexus","GS 300",219
+"Lincoln","LS",218
+"Infiniti","G37",215
+"Jaguar","XJ",213
+"Ford","Windstar",212
+"Infiniti","QX",211
+"Mitsubishi","Mirage",211
+"Volkswagen","Jetta SportWagen",208
+"Nissan","370Z",205
+"Toyota","Highlander Hybrid",204
+"BMW","5 Series Gran Turismo",204
+"Subaru","XV Crosstrek",201
+"Cadillac","ATS",201
+"Dodge","Ram Pickup 3500",201
+"Honda","Ridgeline",199
+"Audi","S4",197
+"Lexus","IS 350",195
+"Suzuki","Grand Vitara",194
+"Saturn","L-Series",191
+"Hyundai","Tiburon",191
+"Chevrolet","TrailBlazer EXT",190
+"Volkswagen","Eos",190
+"Jaguar","X-Type",190
+"Chevrolet","Silverado 1500 Classic",188
+"Infiniti","QX60",183
+"Mitsubishi","Endeavor",182
+"Chevrolet","Venture",179
+"Lexus","RX 450h",178
+"Land Rover","LR4",175
+"Jaguar","XJ-Series",175
+"Mercedes-Benz","CL-Class",175
+"Scion","xD",172
+"Chevrolet","Malibu Maxx",172
+"Volvo","XC70",169
+"Scion","FR-S",166
+"Volvo","V70",165
+"Lexus","RX 400h",164
+"Kia","Rondo",163
+"Cadillac","Seville",158
+"Cadillac","CTS Coupe",158
+"Hyundai","Veracruz",156
+"Cadillac","XTS",155
+"Lincoln","MKT",154
+"Cadillac","Escalade EXT",154
+"Chevrolet","Silverado 3500HD",154
+"Land Rover","Range Rover Evoque",151
+"Acura","RSX",151
+"Mitsubishi","Montero Sport",151
+"Volvo","C70",150
+"Lincoln","Aviator",150
+"Mazda","MPV",149
+"Suzuki","XL7",148
+"Audi","S5",146
+"Infiniti","EX",145
+"Mitsubishi","Eclipse Spyder",142
+"Acura","ILX",140
+"Ford","Crown Victoria",140
+"Pontiac","G5",138
+"Land Rover","LR2",137
+"Mitsubishi","Lancer Evolution",136
+"Ford","Excursion",136
+"Ford","Econoline Wagon",135
+"Pontiac","Bonneville",135
+"Ford","Escape Hybrid",134
+"Mercedes-Benz","CLA-Class",134
+"Audi","A7",133
+"Nissan","Rogue Select",133
+"Hyundai","Equus",132
+"Ford","Explorer Sport",131
+"Oldsmobile","Alero",130
+"Audi","TT",128
+"Hyundai","Elantra Touring",127
+"Lexus","IS 250 C",125
+"Scion","iQ",122
+"Lexus","LX 570",121
+"Dodge","Sprinter Cargo",119
+"GMC","Canyon",118
+"Toyota","Prius c",117
+"Mazda","Protege",116
+"Buick","Park Avenue",116
+"Dodge","Intrepid",115
+"Chevrolet","Corvette Stingray",113
+"Lexus","IS 300",112
+"Pontiac","G8",110
+"BMW","6 Series Gran Coupe",108
+"Honda","CR-Z",108
+"Toyota","Land Cruiser",108
+"Acura","RL",108
+"Subaru","Impreza WRX",108
+"BMW","M5",107
+"Honda","Accord Crosstour",106
+"Ford","Escort",105
+"Lexus","GX 470",105
+"Pontiac","Sunfire",105
+"Hyundai","Elantra Coupe",103
+"Toyota","Prius v",103
+"Mazda","626",102
+"Kia","Amanti",101
+"Chrysler","300M",101
+"Nissan","350Z",101
+"Isuzu","Rodeo",101
+"Toyota","Celica",100
+"Ford","Shelby GT500",100
+"Infiniti","QX80",98
+"Ford","Thunderbird",98
+"Acura","CL",97
+"Infiniti","I35",96
+"Pontiac","Solstice",96
+"Volkswagen","Rabbit",95
+"Lincoln","Zephyr",95
+"Mercury","Montego",93
+"Buick","Encore",93
+"Buick","Rainier",90
+"Infiniti","M37",90
+"MINI","Cooper Paceman",90
+"Ford","Taurus X",89
+"Subaru","B9 Tribeca",87
+"Jaguar","XK",87
+"Lexus","LS 400",86
+"BMW","",86
+"Jaguar","XK-Series",85
+"Nissan","Altima Hybrid",83
+"BMW","M6",83
+"Volvo","V60",83
+"Lexus","SC 430",83
+"Kia","Borrego",81
+"Pontiac","Montana",80
+"Suzuki","XL-7",79
+"Chevrolet","malibu",79
+"Hyundai","XG350",79
+"Ford","F-450 Super Duty",77
+"Lincoln","Mark LT",76
+"Volvo","S70",74
+"Infiniti","QX4",74
+"Infiniti","I30",73
+"Mercedes-Benz","Sprinter",73
+"BMW","3 Series Gran Turismo",73
+"Infiniti","QX70",73
+"Lexus","HS 250h",72
+"Subaru","Tribeca",72
+"Lexus","ES 300h",72
+"Hyundai","Entourage",70
+"Chevrolet","Tracker",69
+"Ford","Expedition EL",68
+"Saab","9-5",67
+"Infiniti","M45",67
+"Lincoln","Continental",67
+"Maserati","Quattroporte",66
+"Chrysler","Concorde",66
+"Porsche","Cayman",66
+"Mercedes-Benz","G-Class",65
+"Volkswagen","GLI",65
+"Chevrolet","Silverado 2500HD Classic",65
+"HUMMER","H2 SUT",65
+"Ford","Focus ST",64
+"Mitsubishi","Montero",64
+"Infiniti","EX35",63
+"BMW","Z3",61
+"Nissan","GT-R",61
+"Kia","K900",61
+"Saturn","Relay",60
+"Toyota","ECHO",60
+"Volkswagen","Beetle Convertible",59
+"Chrysler","Crossfire",59
+"Ram","Promaster Cargo Van",59
+"Nissan","NV Cargo",58
+"Pontiac","GTO",58
+"Pontiac","Firebird",58
+"Lexus","LX 470",58
+"GMC","Envoy XUV",56
+"Chevrolet","Classic",56
+"GMC","Sonoma",55
+"Cadillac","Eldorado",55
+"Buick","Terraza",55
+"Chevrolet","Lumina",54
+"Saturn","Astra",54
+"Saab","9-7X",53
+"Oldsmobile","Intrigue",53
+"Mazda","Millenia",53
+"Ford","Fusion Energi",51
+"Volvo","V50",51
+"Saturn","Sky",50
+"Land Rover","Freelander",50
+"Volkswagen","Jetta GLI",49
+"GMC","Sierra 3500HD",48
+"Mercury","Monterey",48
+"Oldsmobile","Bravada",48
+"Lexus","GS 430",48
+"Mazda","Protege5",47
+"GMC","Sierra 1500 Classic",47
+"Chevrolet","Astro Cargo",46
+"Audi","allroad",46
+"Honda","S2000",46
+"Toyota","Prius Plug-in",45
+"Ford","F-150 Heritage",45
+"Infiniti","Q45",44
+"Acura","Integra",44
+"Chevrolet","Malibu Classic",44
+"Chevrolet","Silverado 1500HD",44
+"Bentley","Continental GT",43
+"Suzuki","Reno",43
+"Ram","C/V Cargo Van",43
+"Subaru","Baja",42
+"Chevrolet","Black Diamond Avalanche",42
+"GMC","Jimmy",42
+"Infiniti","Q60 Convertible",42
+"Subaru","BRZ",42
+"Chevrolet","Astro",42
+"Nissan","Murano CrossCabriolet",42
+"Nissan","NV",42
+"Oldsmobile","Aurora",41
+"Volkswagen","Touareg 2",41
+"Cadillac","CTS-V",41
+"Cadillac","Escalade Hybrid",40
+"Mazda","Mazdaspeed3",40
+"Oldsmobile","Silhouette",40
+"Volvo","C30",40
+"Toyota","Avalon Hybrid",40
+"MINI","Cooper Coupe",39
+"Infiniti","G20",39
+"Land Rover","LR3",39
+"Mitsubishi","Lancer Sportback",39
+"Acura","ZDX",39
+"Jaguar","F-TYPE",39
+"Isuzu","Ascender",38
+"Chevrolet","Silverado 3500",38
+"Audi","R8",38
+"Mercury","Cougar",38
+"Ram","Dakota",37
+"BMW","X5 M",37
+"Infiniti","Q60 Coupe",36
+"Acura","TSX Sport Wagon",36
+"Mazda","3",35
+"Infiniti","FX45",35
+"Cadillac","CTS-V Coupe",35
+"Audi","allroad quattro",35
+"GMC","Yukon Hybrid",34
+"Bentley","Continental GTC",33
+"Chevrolet","Tahoe Hybrid",33
+"Lexus","GS 450h",33
+"Subaru","WRX",33
+"Isuzu","Trooper",32
+"BMW","2 Series",32
+"Infiniti","Q70",32
+"Saturn","L300",32
+"Suzuki","Kizashi",32
+"Chevrolet","Prizm",31
+"Bentley","Continental Flying Spur",31
+"Lexus","IS F",31
+"Volkswagen","Cabrio",30
+"Nissan","NV200",29
+"Cadillac","Catera",29
+"Scion","xA",29
+"Honda","Passport",29
+"MINI","Cooper Roadster",29
+"Maserati","GranTurismo",28
+"Mazda","6",28
+"Mitsubishi","Diamante",28
+"Ram","C/V Tradesman",28
+"Chevrolet","C/K 1500 Series",27
+"Mitsubishi","Raider",27
+"Land Rover","Discovery Series II",27
+"Chevrolet","SSR",27
+"Chrysler","Cirrus",26
+"Cadillac","XLR",26
+"BMW","X6 M",26
+"Chevrolet","Silverado 2500",25
+"Audi","S6",25
+"Volvo","XC",25
+"Chevrolet","Malibu Hybrid",24
+"Lincoln","Navigator L",23
+"Tesla","Model S",23
+"Suzuki","Aerio",23
+"Mercury","Mariner Hybrid",23
+"Volkswagen","Golf R",22
+"Volkswagen","Jetta Hybrid",22
+"Chrysler","LHS",22
+"Mitsubishi","i-MiEV",21
+"Volvo","V40",21
+"Suzuki","Verona",21
+"Mazda","Mazdaspeed 3",21
+"Volvo","850",20
+"GMC","envoy",20
+"Infiniti","G37 Convertible",20
+"Lexus","GS 400",20
+"Honda","accord",20
+"GMC","Suburban",20
+"Toyota","Tercel",20
+"GMC","Sierra 2500HD Classic",20
+"Lincoln","MKC",20
+"Audi","S8",19
+"Isuzu","Axiom",19
+"Ford","Transit Van",19
+"Maserati","Ghibli",19
+"Chrysler","Voyager",19
+"Mazda","Mazdaspeed Mazda3",18
+"Pontiac","G3",18
+"Geo","Prizm",18
+"Ford","Transit Wagon",17
+"Aston Martin","V8 Vantage",17
+"Lexus","IS 350 C",17
+"Rolls-Royce","Ghost",17
+"Acura","RLX",17
+"Nissan","Truck",16
+"Toyota","MR2 Spyder",16
+"Kia","Sephia",16
+"Lexus","SC 400",15
+"Volkswagen","R32",15
+"Porsche","Cayman S",15
+"BMW","M6 Gran Coupe",15
+"Mazda","RX-8",15
+"Audi","RS 5",15
+"Oldsmobile","Cutlass",14
+"Honda","Prelude",14
+"Mazda","Mazdaspeed Mazda6",14
+"Cadillac","CTS Wagon",14
+"BMW","ActiveHybrid 7",13
+"Saturn","VUE Hybrid",13
+"Chevrolet","SS",13
+"Ferrari","California",13
+"Pontiac","Aztek",13
+"Maserati","GranTurismo Convertible",13
+"Oldsmobile","Eighty-Eight",13
+"Nissan","200SX",12
+"Ford","Mustang SVT Cobra",12
+"Ford","Contour",12
+"Infiniti","G37 Coupe",12
+"Audi","",12
+"BMW","4 Series Gran Coupe",12
+"Oldsmobile","Cutlass Supreme",11
+"Land Rover","Discovery",11
+"Chevrolet","Tahoe Limited/Z71",11
+"Mercury","Villager",11
+"Lincoln","MKZ Hybrid",11
+"Mercedes-Benz","300-Class",11
+"GMC","Savana",11
+"Dodge","Viper",11
+"Lexus","SC 300",11
+"Honda","Accord Hybrid",10
+"BMW","M4",10
+"Volkswagen","Phaeton",10
+"Saab","9-2X",10
+"Chevrolet","Caprice",10
+"Infiniti","M56",10
+"GMC","Sierra 3500",10
+"Oldsmobile","Cutlass Ciera",9
+"Mazda","B-Series Pickup",9
+"Lincoln","Mark VIII",9
+"Plymouth","Prowler",9
+"Acura","Legend",9
+"Infiniti","QX50",9
+"BMW","i8",9
+"Fisker","Karma",9
+"GMC","Yukon Denali",9
+"Hyundai","XG300",9
+"Isuzu","i-Series",9
+"Volkswagen","Golf GTI",8
+"Audi","RS 7",8
+"Audi","RS 6",8
+"Mazda","Truck",8
+"Porsche","Macan",8
+"Audi","S7",8
+"Toyota","Pickup",7
+"BMW","M",7
+"Volvo","S90",7
+"Volvo","960",7
+"Volkswagen","EuroVan",7
+"Audi","SQ5",7
+"Lincoln","Blackwood",7
+"Mercedes-Benz","500-Class",7
+"Dodge","Ram Cargo",7
+"Aston Martin","DB9",6
+"GMC","Sierra 1500HD",6
+"Infiniti","FX50",6
+"Plymouth","Neon",6
+"Suzuki","Vitara",6
+"Lexus","RC 350",6
+"Cadillac","STS-V",6
+"Mazda","B-Series Truck",6
+"Audi","TTS",6
+"Lexus","GS 460",6
+"Mercury","Milan Hybrid",6
+"HUMMER","H3T",6
+"Saturn","Aura Hybrid",5
+"BMW","ActiveHybrid X6",5
+"Ford","E-150",5
+"BMW","Z4 M",5
+"Mercedes-Benz","B-Class Electric Drive",5
+"Lexus","LX 450",5
+"Cadillac","ELR",5
+"Mazda","Mazdaspeed Protege",5
+"Infiniti","J30",5
+"Lexus","RC F",5
+"BMW","X4",5
+"Plymouth","Breeze",5
+"Lamborghini","Gallardo",4
+"Toyota","T100",4
+"Lexus","LS 600h L",4
+"Acura","mdx",4
+"Suzuki","Esteem",4
+"Buick","Riviera",4
+"Nissan","300ZX",4
+"Ferrari","F430",4
+"Ford","Windstar Cargo",4
+"Mercury","Marauder",4
+"Pontiac","Montana SV6",4
+"Chevrolet","C/K 3500 Series",4
+"Ram","CV Tradesman",4
+"GMC","Sierra 2500",4
+"Mercury","Tracer",4
+"Chevrolet","Silverado 3500 Classic",3
+"Maserati","Spyder",3
+"Bentley","Continental GT Speed",3
+"Ford","Tempo",3
+"Ford","E-350",3
+"Mercedes-Benz","SLS AMG",3
+"Isuzu","Rodeo Sport",3
+"Mazda","Mazdaspeed MX-5 Miata",3
+"Audi","RS 4",3
+"GMC","Safari",3
+"FIAT","500e",3
+"Audi","TT RS",3
+"Chevrolet","Silverado 1500 Hybrid",3
+"Nissan","NV Passenger",3
+"Mercedes-Benz","190-Class",3
+"Ford","F-150 SVT Lightning",3
+"Mitsubishi","3000GT",3
+"Buick","Roadmaster",3
+"Oldsmobile","Eighty-Eight Royale",3
+"Chevrolet","S-10 Blazer",3
+"Dodge","Sprinter",3
+"Volvo","940",2
+"Chevrolet","Spark EV",2
+"Bentley","Flying Spur",2
+"Mazda","Tribute Hybrid",2
+"Daewoo","Nubira",2
+"BMW","ActiveHybrid 5",2
+"Ford","Aspire",2
+"Maserati","Coupe",2
+"Chevrolet","C/K 2500 Series",2
+"Mercury","Mystique",2
+"GMC","Safari Cargo",2
+"Maserati","GranSport",2
+"Mercedes-Benz","GLA-Class",2
+"Chrysler","Prowler",2
+"Isuzu","Amigo",2
+"Suzuki","Equator",2
+"Aston Martin","Rapide",2
+"GMC","Sierra 1500 Hybrid",2
+"Ford","E-250",2
+"Bentley","Continental Flying Spur Speed",2
+"Ferrari","458 Italia",1
+"Mercedes-Benz","SLS AMG GT",1
+"Mercedes-Benz","420-Class",1
+"Chrysler","Le Baron",1
+"Cadillac","CTS-V Wagon",1
+"Toyota","Paseo",1
+"Lotus","Exige",1
+"Ferrari","360",1
+"Bentley","Continental GTC Speed",1
+"HUMMER","H1",1
+"Oldsmobile","Achieva",1
+"Geo","Metro",1
+"Acura","TLX",1
+"Dodge","Ram Van",1
+"Mercedes-Benz","400-Class",1
+"Mazda","B-Series",1
+"Suzuki","Sidekick",1
+"Cadillac","Fleetwood",1
+"Jeep","Grand Cherokee SRT",1
+"Audi","Q3",1
+"Daewoo","Leganza",1
+"Audi","Cabriolet",1
+"Chevrolet","Corsica",1
+"Dodge","Spirit",1
+"Oldsmobile","Regency",1
+"Bentley","Continental Supersports",1
+"Mercedes-Benz","ML55 AMG",1
+"Honda","Civic del Sol",1
+"Ford","F-250",1
+"BMW","8 Series",1
