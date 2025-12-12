@@ -104,14 +104,16 @@ async function buildBar(canvas) {
   const labels = rows.map(r => labelTeamSeason(r, labelCol, seasonCol || null));
   const vals = rows.map(r => r[yCol]);
 
+  // ✅ define OUTSIDE the chart config object
+  const barColor = canvas.dataset.barColor || "rgba(59, 130, 246, 0.9)"; // blue
+
   new Chart(canvas.getContext("2d"), {
     type: "bar",
     data: {
       labels,
-      const barColor = canvas.dataset.barColor || "rgba(59, 130, 246, 0.9)"; // blue
-datasets: [
-  { label: yLabel, data: vals, backgroundColor: barColor },
-],
+      datasets: [
+        { label: yLabel, data: vals, backgroundColor: barColor },
+      ],
     },
     options: {
       responsive: true,
@@ -126,6 +128,7 @@ datasets: [
     },
   });
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("canvas[data-chart='wins-losses']").forEach(c => {
