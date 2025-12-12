@@ -1,0 +1,212 @@
+"MAKE","MODEL","BODY","NUM_SALES","BODY_RANK"
+"Toyota","Tacoma","Access Cab",121,1
+"Toyota","Tundra","Access Cab",111,2
+"Volkswagen","Beetle Convertible","Beetle Convertible",52,1
+"Cadillac","CTS Coupe","CTS Coupe",129,1
+"Cadillac","CTS Wagon","CTS Wagon",13,1
+"Cadillac","CTS-V Coupe","CTS-V Coupe",28,1
+"Cadillac","CTS-V Wagon","CTS-V Wagon",1,1
+"Mazda","Truck","Cab Plus",4,1
+"Mazda","B-Series Truck","Cab Plus 4",4,1
+"Mazda","B-Series","Cab Plus 4",1,2
+"Dodge","Dakota","Club Cab",156,1
+"Ford","Mustang","Convertible",1797,1
+"BMW","3 Series","Convertible",769,2
+"Chrysler","Sebring","Convertible",411,3
+"Chevrolet","Camaro","Convertible",360,4
+"BMW","6 Series","Convertible",359,5
+"Ford","Mustang","Coupe",2380,1
+"Honda","Civic","Coupe",1461,2
+"Chevrolet","Camaro","Coupe",1210,3
+"Honda","Accord","Coupe",1066,4
+"Nissan","Altima","Coupe",973,5
+"Chevrolet","Silverado 1500","Crew Cab",2562,1
+"Ford","F-250 Super Duty","Crew Cab",1473,2
+"Ram","1500","Crew Cab",1107,3
+"GMC","Sierra 1500","Crew Cab",1061,4
+"Chevrolet","Avalanche","Crew Cab",966,5
+"Toyota","Tundra","CrewMax Cab",445,1
+"Toyota","Tacoma","Double Cab",595,1
+"Toyota","Tundra","Double Cab",449,2
+"Chevrolet","Silverado 1500","Double Cab",142,3
+"GMC","Sierra 1500","Double Cab",50,4
+"Mitsubishi","Raider","Double Cab",15,5
+"Ford","E-Series Van","E-Series Van",1455,1
+"Hyundai","Elantra Coupe","Elantra Coupe",80,1
+"Chevrolet","Silverado 1500","Extended Cab",2044,1
+"GMC","Sierra 1500","Extended Cab",597,2
+"Chevrolet","Silverado 2500HD","Extended Cab",304,3
+"Chevrolet","Colorado","Extended Cab",175,4
+"Ford","F-150","Extended Cab",157,5
+"Infiniti","G Convertible","G Convertible",249,1
+"Infiniti","G Coupe","G Coupe",1263,1
+"Infiniti","G Sedan","G Sedan",5999,1
+"Infiniti","G37 Convertible","G37 Convertible",16,1
+"Infiniti","G37 Coupe","G37 Coupe",11,1
+"Hyundai","Genesis Coupe","Genesis Coupe",232,1
+"Maserati","GranTurismo Convertible","GranTurismo Convertible",7,1
+"Ford","Focus","Hatchback",2842,1
+"MINI","Cooper","Hatchback",1566,2
+"Toyota","Prius","Hatchback",1454,3
+"Ford","Fiesta","Hatchback",1040,4
+"Nissan","Leaf","Hatchback",963,5
+"Nissan","Frontier","King Cab",279,1
+"Nissan","Titan","King Cab",157,2
+"Kia","Forte","Koup",147,1
+"Ram","3500","Mega Cab",18,1
+"Dodge","Ram Pickup 2500","Mega Cab",17,2
+"Ram","2500","Mega Cab",9,3
+"Dodge","Ram Pickup 1500","Mega Cab",8,4
+"Dodge","Ram Pickup 3500","Mega Cab",7,5
+"Dodge","Grand Caravan","Minivan",6618,1
+"Chrysler","Town and Country","Minivan",5011,2
+"Honda","Odyssey","Minivan",2919,3
+"Toyota","Sienna","Minivan",2348,4
+"Kia","Sedona","Minivan",805,5
+"Ram","Promaster Cargo Van","Promaster Cargo Van",49,1
+"Infiniti","Q60 Convertible","Q60 Convertible",38,1
+"Infiniti","Q60 Coupe","Q60 Coupe",32,1
+"Dodge","Ram Pickup 1500","Quad Cab",1440,1
+"Ram","1500","Quad Cab",1199,2
+"Dodge","Ram Pickup 2500","Quad Cab",363,3
+"Dodge","Dakota","Quad Cab",298,4
+"Dodge","Ram Pickup 3500","Quad Cab",136,5
+"Dodge","Ram Van","Ram Van",1,1
+"Ford","F-150","Regular Cab",1489,1
+"Chevrolet","Silverado 1500","Regular Cab",583,2
+"Ford","Ranger","Regular Cab",576,3
+"Dodge","Ram Pickup 1500","Regular Cab",280,4
+"Ram","1500","Regular Cab",249,5
+"Ford","Escape","SUV",9997,1
+"Ford","Explorer","SUV",6646,2
+"Ford","Edge","SUV",4997,3
+"Nissan","Rogue","SUV",4258,4
+"Chevrolet","Equinox","SUV",4037,5
+"Nissan","Altima","Sedan",15091,1
+"Ford","Fusion","Sedan",10687,2
+"Toyota","Camry","Sedan",9457,3
+"Chevrolet","Impala","Sedan",6639,4
+"Honda","Accord","Sedan",6529,5
+"Ford","F-150","SuperCab",2922,1
+"Ford","Ranger","SuperCab",924,2
+"Ford","F-250 Super Duty","SuperCab",485,3
+"Ford","F-350 Super Duty","SuperCab",93,4
+"Ford","F-150 Heritage","SuperCab",25,5
+"Ford","F-150","SuperCrew",7423,1
+"Acura","TSX Sport Wagon","TSX Sport Wagon",28,1
+"Ford","Transit Van","Transit Van",12,1
+"Ford","E-Series Wagon","Van",1139,1
+"Chevrolet","Express Cargo","Van",943,2
+"Ford","Econoline Cargo","Van",683,3
+"GMC","Savana Cargo","Van",528,4
+"Chevrolet","Express","Van",256,5
+"Kia","Soul","Wagon",2287,1
+"Dodge","Caliber","Wagon",1148,2
+"Subaru","Outback","Wagon",1129,3
+"Ford","Flex","Wagon",1026,4
+"Chrysler","PT Cruiser","Wagon",962,5
+"Toyota","Tacoma","Xtracab",40,1
+"Toyota","Tacoma","access cab",37,1
+"Toyota","Tundra","access cab",25,2
+"Volkswagen","Beetle Convertible","beetle convertible",7,1
+"Mazda","B-Series Truck","cab plus 4",1,1
+"Dodge","Dakota","club cab",22,1
+"Ford","Mustang","convertible",293,1
+"BMW","3 Series","convertible",169,2
+"Mercedes-Benz","SL-Class","convertible",91,3
+"Chevrolet","Camaro","convertible",81,4
+"BMW","6 Series","convertible",71,5
+"Ford","Mustang","coupe",480,1
+"Chevrolet","Camaro","coupe",270,2
+"Honda","Civic","coupe",265,3
+"Dodge","Challenger","coupe",244,4
+"BMW","3 Series","coupe",208,5
+"Chevrolet","Silverado 1500","crew cab",553,1
+"Ram","1500","crew cab",355,2
+"GMC","Sierra 1500","crew cab",336,3
+"Ford","F-250 Super Duty","crew cab",325,4
+"Nissan","Frontier","crew cab",236,5
+"Toyota","Tundra","crewmax cab",120,1
+"Cadillac","CTS Coupe","cts coupe",29,1
+"Cadillac","CTS Wagon","cts wagon",1,1
+"Cadillac","CTS-V Coupe","cts-v coupe",7,1
+"Toyota","Tacoma","double cab",163,1
+"Toyota","Tundra","double cab",131,2
+"Chevrolet","Silverado 1500","double cab",41,3
+"GMC","Sierra 1500","double cab",14,4
+"Mitsubishi","Raider","double cab",1,5
+"Ford","E-Series Van","e-series van",368,1
+"Hyundai","Elantra Coupe","elantra coupe",23,1
+"Chevrolet","Silverado 1500","extended cab",352,1
+"GMC","Sierra 1500","extended cab",138,2
+"Chevrolet","Silverado 2500HD","extended cab",50,3
+"Chevrolet","Colorado","extended cab",31,4
+"Ford","F-150","extended cab",21,5
+"Infiniti","G Convertible","g convertible",74,1
+"Infiniti","G Coupe","g coupe",330,1
+"Infiniti","G Sedan","g sedan",1418,1
+"Infiniti","G37 Convertible","g37 convertible",4,1
+"Infiniti","G37 Coupe","g37 coupe",1,1
+"Hyundai","Genesis Coupe","genesis coupe",62,1
+"Maserati","GranTurismo Convertible","granturismo convertible",6,1
+"Nissan","Leaf","hatchback",551,1
+"Ford","Focus","hatchback",411,2
+"MINI","Cooper","hatchback",383,3
+"Toyota","Prius","hatchback",345,4
+"Nissan","Versa","hatchback",190,5
+"Nissan","Frontier","king cab",56,1
+"Nissan","Titan","king cab",40,2
+"Kia","Forte","koup",33,1
+"Dodge","Ram Pickup 3500","mega cab",14,1
+"Ram","2500","mega cab",14,1
+"Dodge","Ram Pickup 2500","mega cab",9,3
+"Ram","3500","mega cab",8,4
+"Dodge","Ram Pickup 1500","mega cab",7,5
+"Dodge","Grand Caravan","minivan",1323,1
+"Chrysler","Town and Country","minivan",983,2
+"Honda","Odyssey","minivan",581,3
+"Toyota","Sienna","minivan",477,4
+"Ford","Transit Connect","minivan",146,5
+"Ram","Promaster Cargo Van","promaster cargo van",10,1
+"Infiniti","Q60 Convertible","q60 convertible",4,1
+"Infiniti","Q60 Coupe","q60 coupe",4,1
+"Dodge","Ram Pickup 1500","quad cab",277,1
+"Ram","1500","quad cab",242,2
+"Dodge","Ram Pickup 2500","quad cab",68,3
+"Dodge","Dakota","quad cab",47,4
+"Dodge","Ram Pickup 3500","quad cab",25,5
+"Ford","F-150","regular cab",279,1
+"Ford","Ranger","regular cab",131,2
+"Chevrolet","Silverado 1500","regular cab",85,3
+"Ram","1500","regular cab",74,4
+"Dodge","Ram Pickup 1500","regular cab",50,5
+"Ford","F-150","regular-cab",15,1
+"Nissan","Altima","sedan",3085,1
+"Toyota","Camry","sedan",3078,2
+"Ford","Fusion","sedan",2259,3
+"Honda","Accord","sedan",1329,4
+"Toyota","Corolla","sedan",1329,4
+"Ford","F-150","supercab",563,1
+"Ford","Ranger","supercab",185,2
+"Ford","F-250 Super Duty","supercab",99,3
+"Ford","F-350 Super Duty","supercab",12,4
+"Ford","F-150 Heritage","supercab",3,5
+"Ford","F-150","supercrew",1610,1
+"Ford","Escape","suv",1864,1
+"Nissan","Rogue","suv",1331,2
+"Ford","Explorer","suv",1061,3
+"Ford","Edge","suv",918,4
+"Chevrolet","Equinox","suv",879,5
+"Ford","Transit Van","transit van",7,1
+"Acura","TSX Sport Wagon","tsx sport wagon",8,1
+"Ford","E-Series Wagon","van",143,1
+"GMC","Savana Cargo","van",134,2
+"Chevrolet","Express Cargo","van",120,3
+"Ford","Econoline Cargo","van",67,4
+"Chevrolet","Express","van",37,5
+"Kia","Soul","wagon",456,1
+"Subaru","Outback","wagon",261,2
+"Dodge","Caliber","wagon",187,3
+"Ford","Flex","wagon",181,4
+"Chrysler","PT Cruiser","wagon",160,5
+"Toyota","Tacoma","xtracab",4,1
