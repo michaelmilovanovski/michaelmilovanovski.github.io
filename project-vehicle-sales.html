@@ -5,19 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vehicle Sales Analysis — Michael Milovanovski</title>
   <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Foundational exploratory analysis of U.S. used vehicle sales data focusing on pricing, mileage impact, seasonality, and regional differences.">
 </head>
+
 <body>
 
 <header class="site-header">
   <div class="container header-inner">
     <div class="logo-area">
-      <div class="logo-circle">MM</div>
-      <div>
-        <h1 class="site-title">Michael Milovanovski</h1>
+      <div class="name-block">
+        <h1 class="site-title">
+          Michael <span class="accent">Milovanovski</span>
+        </h1>
+        <div class="underline"></div>
         <p class="site-subtitle">Data Analyst</p>
       </div>
     </div>
-    <nav class="main-nav">
+
+    <nav class="main-nav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="projects.html" class="active">Projects</a>
       <a href="index.html#about">About</a>
@@ -27,185 +32,148 @@
 </header>
 
 <main>
-<article class="section">
-<div class="container article-container">
+  <article class="section">
+    <div class="container article-container">
 
-<a href="projects.html" class="text-link back-link">← Back to projects</a>
-<p class="eyebrow">Automotive Analytics</p>
-<h1>Vehicle Sales & Pricing Analysis (2015–2020)</h1>
+      <a href="projects.html" class="text-link back-link">← Back to projects</a>
 
-<p class="article-meta">
-  <strong>Tools:</strong> SQL (Oracle), Python (pandas, seaborn, matplotlib) •
-  <strong>Role:</strong> End-to-end data analyst
-</p>
+      <p class="eyebrow">Automotive Analytics</p>
+      <h1>Vehicle Sales &amp; Pricing Analysis (2015–2020)</h1>
 
-<section class="article-section">
-<h2>Overview</h2>
-<p>
-This project analyzes trends and pricing behaviors in the U.S. used car market using
-SQL for preprocessing and Python for visualization. The dataset (from Kaggle) provides
-vehicle-level information including make, model, mileage, condition, sale date, and price.
-</p>
-<p>
-The goal is to understand how mileage, seasonality, state, make/model popularity,
-and body type impact average prices and sales volume.
-</p>
-</section>
+      <p class="article-meta">
+        <strong>Level:</strong> Foundational Analysis •
+        <strong>Tools:</strong> SQL (Oracle), Python (pandas, matplotlib) •
+        <strong>Role:</strong> End-to-end data analyst
+      </p>
 
-<section class="article-section">
-<h2>Business Questions</h2>
-<ul>
-  <li>How do average selling prices change month-to-month?</li>
-  <li>Which car makes and models sell the most?</li>
-  <li>How does mileage affect price and sales volume?</li>
-  <li>Which states record the highest sales counts?</li>
-  <li>How do average prices vary by body type?</li>
-</ul>
-</section>
+      <section class="article-section">
+        <h2>Overview</h2>
+        <p>
+          This project analyzes trends and pricing behaviors in the U.S. used car market using
+          SQL for preprocessing and Python for visualization. The dataset (from Kaggle) provides
+          vehicle-level information including make, model, mileage, condition, sale date, and price.
+        </p>
+        <p>
+          The goal is to understand how mileage, seasonality, state, make/model popularity,
+          and body type impact average prices and sales volume.
+        </p>
+      </section>
 
-<section class="article-section">
-<h2>Methodology</h2>
-<ul>
-  <li>Filtered dataset to 2015–2020 records using SQL.</li>
-  <li>Cleaned missing values and standardized body type labels.</li>
-  <li>Built summary tables and aggregates in SQL.</li>
-  <li>Used Python (pandas, seaborn, matplotlib) for EDA and visuals.</li>
-</ul>
+      <section class="article-section">
+        <h2>Business Questions</h2>
+        <ul>
+          <li>How do average selling prices change month-to-month?</li>
+          <li>Which makes and models sell the most?</li>
+          <li>How does mileage affect price and sales volume?</li>
+          <li>Which states record the highest sales counts?</li>
+          <li>How do average prices vary by body type?</li>
+        </ul>
+      </section>
 
-<pre class="code-block"><code>-- Example SQL: Average price by body type
+      <section class="article-section">
+        <h2>Methodology</h2>
+        <ul>
+          <li>Filtered dataset to 2015–2020 records using SQL.</li>
+          <li>Cleaned missing values and standardized body type labels.</li>
+          <li>Built summary tables and aggregates in SQL.</li>
+          <li>Used Python (pandas, matplotlib) for EDA and visuals.</li>
+        </ul>
+
+        <pre class="code-block"><code>-- Example SQL: Average price by body type
 SELECT body_type,
        ROUND(AVG(sellingprice), 2) AS avg_price,
        COUNT(*) AS vehicles_sold
 FROM car_sales_clean
 GROUP BY body_type
 ORDER BY avg_price DESC;</code></pre>
-</section>
+      </section>
 
-<section class="article-section">
-<h2>Results & Visuals</h2>
+      <section class="article-section">
+        <h2>Results &amp; Visuals</h2>
+        <p class="article-note">
+          This project uses static visuals to highlight the most important pricing and sales patterns.
+          (Replace the image filenames below with your actual PNG names.)
+        </p>
 
-<h3>📈 Average Selling Price by Month (2015)</h3>
-<canvas
-  data-chart="bar"
-  data-csv="data/vehicle/avg_price_by_month_2015.csv"
-  data-label-col="MONTH"
-  data-y-col="AVG_PRICE"
-  data-y-label="Average Price ($)"
-  data-sort-col="MONTH_NUM"
-  data-sort-dir="asc"
-  data-title="Average Selling Price by Month (2015)"
-  data-bar-color="rgba(59, 130, 246, 0.9)"
-  style="max-width: 900px; width: 100%; height: 450px;"
-></canvas>
+        <!-- Trimmed + ordered to tell a clean story (6 visuals max) -->
+        <div class="figure-grid">
 
-<h3>🚘 Top 10 Best-Selling Car Models</h3>
-<canvas
-  data-chart="bar"
-  data-csv="data/vehicle/top_10_models_by_sales.csv"
-  data-label-col="MODEL"
-  data-y-col="SALES_COUNT"
-  data-y-label="Units Sold"
-  data-sort-col="SALES_COUNT"
-  data-sort-dir="desc"
-  data-limit="10"
-  data-title="Top 10 Best-Selling Models"
-  data-bar-color="rgba(34, 197, 94, 0.9)"
-  style="max-width: 900px; width: 100%; height: 450px;"
-></canvas>
+          <figure class="card figure">
+            <img src="vehicle-price-distribution.png" alt="Vehicle price distribution" />
+            <figcaption>
+              <strong>Price distribution:</strong> establishes typical price ranges and highlights outliers.
+            </figcaption>
+          </figure>
 
-<h3>⏱️ Odometer vs Sales Volume (Binned)</h3>
-<canvas
-  data-chart="bar"
-  data-csv="data/vehicle/odometer_bins_sales.csv"
-  data-label-col="ODOMETER_BIN"
-  data-y-col="SALES_COUNT"
-  data-y-label="Sales Count"
-  data-sort-col="BIN_ORDER"
-  data-sort-dir="asc"
-  data-title="Sales Count by Odometer Range"
-  data-bar-color="rgba(100, 116, 139, 0.9)"
-  style="max-width: 900px; width: 100%; height: 450px;"
-></canvas>
+          <figure class="card figure">
+            <img src="vehicle-mileage-vs-price.png" alt="Mileage vs average price" />
+            <figcaption>
+              <strong>Mileage impact:</strong> higher mileage generally correlates with lower selling price.
+            </figcaption>
+          </figure>
 
-<h3>💰 Odometer vs Average Price (Binned)</h3>
-<canvas
-  data-chart="bar"
-  data-csv="data/vehicle/odometer_bins_avg_price.csv"
-  data-label-col="ODOMETER_BIN"
-  data-y-col="AVG_PRICE"
-  data-y-label="Average Price ($)"
-  data-sort-col="BIN_ORDER"
-  data-sort-dir="asc"
-  data-title="Average Price by Odometer Range"
-  data-bar-color="rgba(168, 85, 247, 0.9)"
-  style="max-width: 900px; width: 100%; height: 450px;"
-></canvas>
+          <figure class="card figure">
+            <img src="vehicle-seasonal-pricing.png" alt="Average selling price by month" />
+            <figcaption>
+              <strong>Seasonality:</strong> shows how average selling prices fluctuate month-to-month.
+            </figcaption>
+          </figure>
 
-<h3>🗺️ Number of Car Sales by State (Top 15)</h3>
-<canvas
-  data-chart="bar"
-  data-csv="data/vehicle/sales_by_state.csv"
-  data-label-col="STATE"
-  data-y-col="SALES_COUNT"
-  data-y-label="Sales Count"
-  data-sort-col="SALES_COUNT"
-  data-sort-dir="desc"
-  data-limit="15"
-  data-title="Car Sales by State (Top 15)"
-  data-bar-color="rgba(239, 68, 68, 0.9)"
-  style="max-width: 900px; width: 100%; height: 450px;"
-></canvas>
+          <figure class="card figure">
+            <img src="vehicle-top-models.png" alt="Top-selling makes or models" />
+            <figcaption>
+              <strong>Top makes/models:</strong> identifies the most common vehicles and demand patterns.
+            </figcaption>
+          </figure>
 
-<h3>🚗 Average Price by Body Type</h3>
-<canvas
-  data-chart="bar"
-  data-csv="data/vehicle/avg_price_by_body_type.csv"
-  data-label-col="BODY_TYPE"
-  data-y-col="AVG_PRICE"
-  data-y-label="Average Price ($)"
-  data-sort-col="AVG_PRICE"
-  data-sort-dir="desc"
-  data-title="Average Price by Body Type"
-  data-bar-color="rgba(234, 179, 8, 0.9)"
-  style="max-width: 900px; width: 100%; height: 450px;"
-></canvas>
+          <figure class="card figure">
+            <img src="vehicle-sales-by-state.png" alt="Sales volume by state" />
+            <figcaption>
+              <strong>Regional differences:</strong> compares sales volume across top states.
+            </figcaption>
+          </figure>
 
-</section>
+          <figure class="card figure">
+            <img src="vehicle-price-by-body-type.png" alt="Average price by body type" />
+            <figcaption>
+              <strong>Body type pricing:</strong> SUVs and trucks tend to command premium resale prices.
+            </figcaption>
+          </figure>
 
-<section class="article-section">
-<h2>Key Insights</h2>
-<ul>
-  <li>Seasonality influences pricing with early-year and summer peaks.</li>
-  <li>Lower mileage cars sell for higher prices but in lower volumes.</li>
-  <li>California, Texas, and Florida lead sales due to population density.</li>
-  <li>SUVs and trucks consistently command premium resale prices.</li>
-</ul>
-</section>
+        </div>
+      </section>
 
-<section class="article-section article-links">
-<h2>Links</h2>
-<ul>
-  <li><a href="https://github.com/michaelmilovanovski" target="_blank">GitHub Repository</a></li>
-  <li><a href="#" class="text-link">Download project PDF (optional)</a></li>
-</ul>
-</section>
+      <section class="article-section">
+        <h2>Key Insights</h2>
+        <ul>
+          <li>Seasonality influences pricing with early-year and summer peaks.</li>
+          <li>Lower mileage vehicles sell for higher prices but in lower volumes.</li>
+          <li>California, Texas, and Florida lead sales due to high demand and population density.</li>
+          <li>SUVs and trucks consistently command premium resale prices.</li>
+        </ul>
+      </section>
 
-</div>
-</article>
+      <section class="article-section article-links">
+        <h2>Links</h2>
+        <ul>
+          <li>
+            <a class="text-link" href="https://github.com/michaelmilovanovski/michaelmilovanovski.github.io" target="_blank" rel="noopener noreferrer">
+              GitHub Repository
+            </a>
+          </li>
+          <li><a href="#" class="text-link">Download project PDF (optional)</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </article>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p>© <span id="year"></span> Michael Milovanovski. All rights reserved.</p>
+    <p>© <span id="year"></span> Michael Milovanovski</p>
   </div>
 </footer>
-
-<!-- Libraries (order matters) -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-
-<!-- Same chart builder used on your NBA page -->
-<script src="charts.js"></script>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -213,6 +181,8 @@ ORDER BY avg_price DESC;</code></pre>
 
 </body>
 </html>
+
+
 
 
 
