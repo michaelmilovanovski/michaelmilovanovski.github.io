@@ -62,17 +62,18 @@ async function buildWinsLosses(canvas) {
   const wins = rows.map(r => r[winsCol]);
   const losses = rows.map(r => r[lossesCol]);
 
+  // ✅ define colors OUTSIDE the chart config object
+  const winsColor   = canvas.dataset.winsColor   || "rgba(34, 197, 94, 0.85)";  // green
+  const lossesColor = canvas.dataset.lossesColor || "rgba(239, 68, 68, 0.85)"; // red
+
   new Chart(canvas.getContext("2d"), {
     type: "bar",
     data: {
       labels,
-      const winsColor   = canvas.dataset.winsColor   || "rgba(34, 197, 94, 0.85)";   // green
-const lossesColor = canvas.dataset.lossesColor || "rgba(239, 68, 68, 0.85)";  // red
-
-datasets: [
-  { label: winsLabel, data: wins, backgroundColor: winsColor },
-  { label: lossesLabel, data: losses, backgroundColor: lossesColor },
-],
+      datasets: [
+        { label: winsLabel, data: wins, backgroundColor: winsColor },
+        { label: lossesLabel, data: losses, backgroundColor: lossesColor },
+      ],
     },
     options: {
       responsive: true,
@@ -88,6 +89,7 @@ datasets: [
     },
   });
 }
+
 
 async function buildBar(canvas) {
   const rowsRaw = await loadCsv(canvas.dataset.csv);
