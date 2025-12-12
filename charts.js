@@ -66,10 +66,13 @@ async function buildWinsLosses(canvas) {
     type: "bar",
     data: {
       labels,
-      datasets: [
-        { label: winsLabel, data: wins, backgroundColor: "rgba(37, 99, 235, 0.85)" },
-        { label: lossesLabel, data: losses, backgroundColor: "rgba(239, 68, 68, 0.85)" },
-      ],
+      const winsColor   = canvas.dataset.winsColor   || "rgba(34, 197, 94, 0.85)";   // green
+const lossesColor = canvas.dataset.lossesColor || "rgba(239, 68, 68, 0.85)";  // red
+
+datasets: [
+  { label: winsLabel, data: wins, backgroundColor: winsColor },
+  { label: lossesLabel, data: losses, backgroundColor: lossesColor },
+],
     },
     options: {
       responsive: true,
