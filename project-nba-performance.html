@@ -86,8 +86,9 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
 <h3>🏆 Best Regular Season Records</h3>
 <img src="images/best_regular_season_records.png" width="100%" alt="Best regular season records">
 
-<h3>📉 Worst Regular Season Records</h3>
-<img src="images/worst_records_in_nba_history.svg" width="100%" alt="Worst NBA records">
+<h3>🏆 Worst Regular Season Records (Interactive)</h3>
+<canvas id="worstRecordsChart" style="max-width: 900px; width: 100%; height: 450px;"></canvas>
+<p><em>Hover to see exact win/loss numbers and toggle series using the legend.</em></p>
 
 <h3>🔺 Largest Win Increase (YoY)</h3>
 <img src="images/largest_win_increase_from_previous_season.png" width="100%" alt="Largest win increase">
@@ -131,12 +132,89 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
   </div>
 </footer>
 
+<!-- Load Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Worst Regular Season Records (Interactive Chart) -->
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+  const ctxWorst = document.getElementById('worstRecordsChart').getContext('2d');
+
+  // Labels from your CSV
+  const labelsWorst = [
+    "Charlotte Bobcats (2011)",
+    "Philadelphia 76ers (1972)",
+    "Philadelphia 76ers (2015)",
+    "Providence Steamrollers (1947)",
+    "Denver Nuggets (1997)",
+  ];
+
+  // Wins and losses from your CSV
+  const winsWorst   = [7, 9, 10, 6, 11];
+  const lossesWorst = [59, 73, 72, 42, 71];
+
+  new Chart(ctxWorst, {
+    type: 'bar',
+    data: {
+      labels: labelsWorst,
+      datasets: [
+        {
+          label: 'Wins',
+          data: winsWorst,
+          backgroundColor: 'rgba(37, 99, 235, 0.85)', // blue
+        },
+        {
+          label: 'Losses',
+          data: lossesWorst,
+          backgroundColor: 'rgba(239, 68, 68, 0.85)', // red
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: {
+        mode: 'index',
+        intersect: false
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: 'Worst Regular Season Records (Wins vs Losses)'
+        },
+        tooltip: {
+          enabled: true
+        },
+        legend: {
+          position: 'top'
+        }
+      },
+      scales: {
+        x: {
+          ticks: {
+            maxRotation: 45,
+            minRotation: 30
+          }
+        },
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Number of Games'
+          }
+        }
+      }
+    }
+  });
+</script>
+
+<!-- Footer year -->
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
 </html>
+
+
 
 
 
