@@ -560,6 +560,11 @@ body {
 /* Responsive tweaks */
 
 @media (max-width: 600px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
@@ -571,16 +576,14 @@ body {
     justify-content: flex-start;
     flex-wrap: wrap;
   }
-}
 
-/* Mobile horizontal breathing room */
-
-@media (max-width: 600px) {
-  .container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  /* Hero-only micro adjustment */
+  .hero-text {
+    padding-left: 0.25rem;
   }
 }
+
+
 
 
 
