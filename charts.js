@@ -106,9 +106,10 @@ async function buildBar(canvas) {
     type: "bar",
     data: {
       labels,
-      datasets: [
-        { label: yLabel, data: vals, backgroundColor: "rgba(37, 99, 235, 0.85)" },
-      ],
+      const barColor = canvas.dataset.barColor || "rgba(59, 130, 246, 0.9)"; // blue
+datasets: [
+  { label: yLabel, data: vals, backgroundColor: barColor },
+],
     },
     options: {
       responsive: true,
