@@ -223,7 +223,9 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
 
 <!-- Worst Regular Season Records (Interactive Chart) -->
 <script>
-  const ctxWorst = document.getElementById('worstRecordsChart').getContext('2d');
+ const worstCanvas = document.getElementById("worstRecordsChart");
+if (worstCanvas) {
+  const ctxWorst = worstCanvas.getContext("2d");
 
   // Labels from your CSV
   const labelsWorst = [
@@ -233,6 +235,9 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
     "Providence Steamrollers (1947)",
     "Denver Nuggets (1997)",
   ];
+
+  // ... the rest of the chart code that uses ctxWorst ...
+}
 
   // Wins and losses from your CSV
   const winsWorst   = [7, 9, 10, 6, 11];
@@ -303,6 +308,7 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
 
 </body>
 </html>
+
 
 
 
