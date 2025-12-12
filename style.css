@@ -118,18 +118,13 @@ body {
   gap: 0.75rem;
 }
 
-.logo-circle {
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
+/* NEW: Name block + accent + underline */
+
+.name-block {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle at 30% 0, #60a5fa, #2563eb);
-  color: white;
-  font-weight: 600;
-  font-size: 0.95rem;
-  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.55);
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
 }
 
 .site-title {
@@ -137,10 +132,42 @@ body {
   margin: 0;
 }
 
+.site-title .accent {
+  color: var(--accent);
+}
+
+.underline {
+  width: 0;
+  height: 3px;
+  margin: 6px 0 8px 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), rgba(34, 211, 238, 0.95));
+  opacity: 0;
+  animation: underlineGrow 0.8s ease-out 0.15s forwards;
+}
+
+@keyframes underlineGrow {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 64px;
+    opacity: 1;
+  }
+}
+
 .site-subtitle {
   margin: 0;
   font-size: 0.8rem;
   color: rgba(148, 163, 184, 0.9);
+}
+
+/* Keep subtitle readable in light mode header */
+@media (prefers-color-scheme: light) {
+  .site-subtitle {
+    color: rgba(15, 23, 42, 0.65);
+  }
 }
 
 .main-nav {
@@ -165,6 +192,13 @@ body {
 .main-nav a.active {
   background: var(--accent-strong);
   color: white;
+}
+
+/* In light mode, active white text can reduce contrast—use header text color */
+@media (prefers-color-scheme: light) {
+  .main-nav a.active {
+    color: #020617;
+  }
 }
 
 /* Hero */
@@ -530,3 +564,5 @@ body {
     flex-wrap: wrap;
   }
 }
+
+
