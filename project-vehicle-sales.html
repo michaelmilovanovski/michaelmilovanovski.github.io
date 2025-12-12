@@ -46,37 +46,41 @@
         <strong>Role:</strong> End-to-end data analyst
       </p>
 
+      <!-- OVERVIEW -->
       <section class="article-section">
         <h2>Overview</h2>
         <p>
-          This project analyzes trends and pricing behaviors in the U.S. used car market using
-          SQL for preprocessing and Python for visualization. The dataset (from Kaggle) provides
-          vehicle-level information including make, model, mileage, condition, sale date, and price.
+          This project explores trends and pricing behavior in the U.S. used car market using
+          SQL for data preparation and Python for exploratory analysis and visualization.
+          The dataset includes vehicle-level attributes such as make, model, mileage,
+          condition, sale date, and selling price.
         </p>
         <p>
-          The goal is to understand how mileage, seasonality, state, make/model popularity,
-          and body type impact average prices and sales volume.
+          The objective is to understand how mileage, seasonality, geography, and vehicle
+          characteristics influence pricing and sales volume.
         </p>
       </section>
 
+      <!-- BUSINESS QUESTIONS -->
       <section class="article-section">
         <h2>Business Questions</h2>
         <ul>
-          <li>How do average selling prices change month-to-month?</li>
-          <li>Which makes and models sell the most?</li>
-          <li>How does mileage affect price and sales volume?</li>
-          <li>Which states record the highest sales counts?</li>
-          <li>How do average prices vary by body type?</li>
+          <li>How do average selling prices change throughout the year?</li>
+          <li>Which car models account for the highest sales volume?</li>
+          <li>How does mileage impact both price and demand?</li>
+          <li>Which states record the highest number of vehicle sales?</li>
+          <li>How do prices vary across different body types?</li>
         </ul>
       </section>
 
+      <!-- METHODOLOGY -->
       <section class="article-section">
         <h2>Methodology</h2>
         <ul>
-          <li>Filtered dataset to 2015–2020 records using SQL.</li>
-          <li>Cleaned missing values and standardized body type labels.</li>
-          <li>Built summary tables and aggregates in SQL.</li>
-          <li>Used Python (pandas, matplotlib) for EDA and visuals.</li>
+          <li>Filtered records to the 2015–2020 timeframe using SQL.</li>
+          <li>Cleaned missing values and standardized categorical fields.</li>
+          <li>Built aggregate tables for pricing and sales metrics.</li>
+          <li>Generated static visuals using Python (pandas, matplotlib).</li>
         </ul>
 
         <pre class="code-block"><code>-- Example SQL: Average price by body type
@@ -88,71 +92,72 @@ GROUP BY body_type
 ORDER BY avg_price DESC;</code></pre>
       </section>
 
+      <!-- RESULTS & VISUALS -->
       <section class="article-section">
         <h2>Results &amp; Visuals</h2>
         <p class="article-note">
-          This project uses static visuals to highlight the most important pricing and sales patterns.
-          (Replace the image filenames below with your actual PNG names.)
+          The following visuals highlight the most important pricing and sales patterns
+          identified during the analysis.
         </p>
 
-        <!-- Trimmed + ordered to tell a clean story (6 visuals max) -->
         <div class="figure-grid">
 
           <figure class="card figure">
-            <img src="vehicle-price-distribution.png" alt="Vehicle price distribution" />
+            <img src="avg_price_over_time.png" alt="Average selling price by month in 2015" />
             <figcaption>
-              <strong>Price distribution:</strong> establishes typical price ranges and highlights outliers.
+              <strong>Seasonality:</strong> Average selling prices dip in early spring
+              and rise steadily into summer, indicating seasonal pricing behavior.
             </figcaption>
           </figure>
 
           <figure class="card figure">
-            <img src="vehicle-mileage-vs-price.png" alt="Mileage vs average price" />
+            <img src="top_selling_car_models.png" alt="Top 10 best-selling car models" />
             <figcaption>
-              <strong>Mileage impact:</strong> higher mileage generally correlates with lower selling price.
+              <strong>Demand leaders:</strong> Models such as the Nissan Altima and Ford F-150
+              consistently rank among the highest in sales volume.
             </figcaption>
           </figure>
 
           <figure class="card figure">
-            <img src="vehicle-seasonal-pricing.png" alt="Average selling price by month" />
+            <img src="odometer_vs_number_of_sales_and_price.png" alt="Odometer vs sales volume and average price" />
             <figcaption>
-              <strong>Seasonality:</strong> shows how average selling prices fluctuate month-to-month.
+              <strong>Mileage impact:</strong> Lower-mileage vehicles command higher prices,
+              while higher-mileage vehicles account for the majority of sales volume.
             </figcaption>
           </figure>
 
           <figure class="card figure">
-            <img src="vehicle-top-models.png" alt="Top-selling makes or models" />
+            <img src="car_sales_by_state.png" alt="Number of car sales by state" />
             <figcaption>
-              <strong>Top makes/models:</strong> identifies the most common vehicles and demand patterns.
+              <strong>Regional demand:</strong> Florida, California, and Texas lead vehicle
+              sales, reflecting population density and market size.
             </figcaption>
           </figure>
 
           <figure class="card figure">
-            <img src="vehicle-sales-by-state.png" alt="Sales volume by state" />
+            <img src="avg_price_by_body_type.png" alt="Average selling price by body type" />
             <figcaption>
-              <strong>Regional differences:</strong> compares sales volume across top states.
-            </figcaption>
-          </figure>
-
-          <figure class="card figure">
-            <img src="vehicle-price-by-body-type.png" alt="Average price by body type" />
-            <figcaption>
-              <strong>Body type pricing:</strong> SUVs and trucks tend to command premium resale prices.
+              <strong>Product segmentation:</strong> SUVs, wagons, and performance-oriented
+              body types tend to command higher average resale prices.
             </figcaption>
           </figure>
 
         </div>
       </section>
 
+      <!-- KEY INSIGHTS -->
       <section class="article-section">
         <h2>Key Insights</h2>
         <ul>
-          <li>Seasonality influences pricing with early-year and summer peaks.</li>
-          <li>Lower mileage vehicles sell for higher prices but in lower volumes.</li>
-          <li>California, Texas, and Florida lead sales due to high demand and population density.</li>
-          <li>SUVs and trucks consistently command premium resale prices.</li>
+          <li>Used vehicle prices exhibit clear seasonal trends throughout the year.</li>
+          <li>High-volume models dominate sales even when not priced at a premium.</li>
+          <li>Mileage strongly influences price, but higher mileage vehicles drive volume.</li>
+          <li>Regional differences reflect both population size and local demand patterns.</li>
+          <li>Body type plays a significant role in resale pricing.</li>
         </ul>
       </section>
 
+      <!-- LINKS -->
       <section class="article-section article-links">
         <h2>Links</h2>
         <ul>
@@ -161,7 +166,6 @@ ORDER BY avg_price DESC;</code></pre>
               GitHub Repository
             </a>
           </li>
-          <li><a href="#" class="text-link">Download project PDF (optional)</a></li>
         </ul>
       </section>
 
@@ -181,6 +185,7 @@ ORDER BY avg_price DESC;</code></pre>
 
 </body>
 </html>
+
 
 
 
