@@ -407,11 +407,36 @@ body {
   color: var(--muted);
 }
 
+/* UPDATED: Card tag now renders like a badge */
 .card-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: fit-content;
+
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(148, 163, 184, 0.9);
+
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(148, 163, 184, 0.10);
+  color: rgba(148, 163, 184, 0.95);
+}
+
+/* Badge variants */
+.card-tag.tag-advanced {
+  border-color: rgba(37, 99, 235, 0.55);
+  background: rgba(37, 99, 235, 0.14);
+  color: var(--accent);
+}
+
+.card-tag.tag-foundational {
+  border-color: rgba(16, 185, 129, 0.50);
+  background: rgba(16, 185, 129, 0.12);
+  color: rgba(16, 185, 129, 0.95);
 }
 
 .card-actions {
@@ -526,6 +551,36 @@ body {
 .article-note {
   font-size: 0.85rem;
   color: var(--muted);
+}
+
+/* NEW: PNG figure grid for static visuals */
+.figure-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 800px) {
+  .figure-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.figure {
+  padding: 0;
+  overflow: hidden;
+}
+
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.figure figcaption {
+  padding: 0.9rem 1rem 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .code-block {
