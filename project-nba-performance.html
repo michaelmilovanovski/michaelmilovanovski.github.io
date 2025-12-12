@@ -83,24 +83,96 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
 <section class="article-section">
 <h2>Results & Visuals</h2>
 
-<h3>🏆 Best Regular Season Records</h3>
-<img src="images/best_regular_season_records.png" width="100%" alt="Best regular season records">
+<h3>🏆 Best Regular Season Records (Interactive)</h3>
+<canvas
+  data-chart="wins-losses"
+  data-csv="data/best_regular_season_records.csv"
+  data-label-col="TEAM_NAME"
+  data-season-col="SEASON"
+  data-wins-col="WINS"
+  data-losses-col="LOSSES"
+  data-sort-col="WIN_PCT"
+  data-sort-dir="desc"
+  data-limit="5"
+  data-title="Best Regular Season Records (Top 5)"
+  style="max-width: 900px; width: 100%; height: 450px;"
+></canvas>
 
-<h3>🏆 Worst Regular Season Records (Interactive)</h3>
-<canvas id="worstRecordsChart" style="max-width: 900px; width: 100%; height: 450px;"></canvas>
-<p><em>Hover to see exact win/loss numbers and toggle series using the legend.</em></p>
+<h3>📉 Worst Regular Season Records (Interactive)</h3>
+<canvas
+  data-chart="wins-losses"
+  data-csv="data/worst_records_in_nba_history.csv"
+  data-label-col="TEAM_NAME"
+  data-season-col="SEASON"
+  data-wins-col="WINS"
+  data-losses-col="LOSSES"
+  data-sort-col="WIN_PCT"
+  data-sort-dir="asc"
+  data-limit="5"
+  data-title="Worst Regular Season Records (Top 5)"
+  style="max-width: 900px; width: 100%; height: 450px;"
+></canvas>
 
-<h3>🔺 Largest Win Increase (YoY)</h3>
-<img src="images/largest_win_increase_from_previous_season.png" width="100%" alt="Largest win increase">
+<h3>🔺 Largest Win Increase From Previous Season (Interactive)</h3>
+<canvas
+  data-chart="bar"
+  data-csv="data/largest_win_increase_from_previous_season.csv"
+  data-label-col="TEAM_NAME"
+  data-season-col="SEASON"
+  data-y-col="WINS_INCREASE"
+  data-y-label="Win Increase"
+  data-sort-col="WINS_INCREASE"
+  data-sort-dir="desc"
+  data-limit="10"
+  data-title="Largest Win Increase From Previous Season (Top 10)"
+  style="max-width: 900px; width: 100%; height: 450px;"
+></canvas>
 
-<h3>📊 Top 5 Records Over a 5-Year Span</h3>
-<img src="images/top_records_over_5_year_span.png" width="100%" alt="Top 5-year spans">
+<h3>📊 Top Records Over a 5-Year Span (Interactive)</h3>
+<canvas
+  data-chart="wins-losses"
+  data-csv="data/top_records_over_5_year_span.csv"
+  data-label-col="TEAM_NAME"
+  data-season-col="SEASON"
+  data-wins-col="WINS_5Y"
+  data-losses-col="LOSSES_5Y"
+  data-wins-label="Wins (5Y)"
+  data-losses-label="Losses (5Y)"
+  data-sort-col="WIN_PCT_5Y"
+  data-sort-dir="desc"
+  data-limit="5"
+  data-title="Top Records Over a 5-Year Span (Top 5)"
+  style="max-width: 900px; width: 100%; height: 450px;"
+></canvas>
 
-<h3>📈 Total Wins & Losses (Sorted by Win%)</h3>
-<img src="images/total_wins_and_losses.png" width="100%" alt="All-time wins and losses">
+<h3>📈 Total Wins & Losses (Interactive)</h3>
+<canvas
+  data-chart="wins-losses"
+  data-csv="data/total_wins_and_losses.csv"
+  data-label-col="TEAM_NAME"
+  data-wins-col="WINS"
+  data-losses-col="LOSSES"
+  data-limit="10"
+  data-title="Total Wins & Losses (Top 10 Franchises)"
+  style="max-width: 900px; width: 100%; height: 450px;"
+></canvas>
 
-<h3>🟣🟨 Lakers’ Best 5-Year Run</h3>
-<img src="images/best_5_year_record_lakers.png" width="100%" alt="Best Lakers 5-year run">
+<h3>🟣🟨 Lakers’ Best 5-Year Run (Interactive)</h3>
+<canvas
+  data-chart="wins-losses"
+  data-csv="data/best_5_year_record_lakers.csv"
+  data-label-col="TEAM_NAME"
+  data-season-col="SEASON"
+  data-wins-col="WINS_5Y"
+  data-losses-col="LOSSES_5Y"
+  data-wins-label="Wins (5Y)"
+  data-losses-label="Losses (5Y)"
+  data-sort-col="WIN_PCT_5Y"
+  data-sort-dir="desc"
+  data-limit="10"
+  data-title="Lakers Best Rolling 5-Year Runs (Top 10)"
+  style="max-width: 900px; width: 100%; height: 450px;"
+></canvas>
 
 </section>
 
@@ -206,6 +278,10 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
   });
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="charts.js"></script>
+
 <!-- Footer year -->
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
@@ -213,6 +289,7 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
 
 </body>
 </html>
+
 
 
 
