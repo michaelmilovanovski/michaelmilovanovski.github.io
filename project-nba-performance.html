@@ -95,13 +95,15 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
   data-sort-dir="desc"
   data-limit="5"
   data-title="Best Regular Season Records (Top 5)"
+  data-wins-color="rgba(34, 197, 94, 0.9)"   <!-- green -->
+  data-losses-color="rgba(100, 116, 139, 0.9)"
   style="max-width: 900px; width: 100%; height: 450px;"
 ></canvas>
 
 <h3>📉 Worst Regular Season Records (Interactive)</h3>
 <canvas
   data-chart="wins-losses"
-  data-csv="data/worst_records_in_nba_history.csv"
+  data-csv="/data/worst_records_in_nba_history.csv"
   data-label-col="TEAM_NAME"
   data-season-col="SEASON"
   data-wins-col="WINS"
@@ -109,9 +111,12 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
   data-sort-col="WIN_PCT"
   data-sort-dir="asc"
   data-limit="5"
-  data-title="Worst Regular Season Records (Top 5)"
-  style="max-width: 900px; width: 100%; height: 450px;"
+  data-title="Worst Regular Season Records"
+  data-wins-color="rgba(100, 116, 139, 0.9)"   <!-- slate -->
+  data-losses-color="rgba(239, 68, 68, 0.9)"   <!-- red -->
+  style="max-width:900px;width:100%;height:450px;"
 ></canvas>
+
 
 <h3>🔺 Largest Win Increase From Previous Season (Interactive)</h3>
 <canvas
@@ -142,6 +147,8 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
   data-sort-dir="desc"
   data-limit="5"
   data-title="Top Records Over a 5-Year Span (Top 5)"
+  data-wins-color="rgba(59, 130, 246, 0.9)"   <!-- blue -->
+  data-losses-color="rgba(148, 163, 184, 0.9)"
   style="max-width: 900px; width: 100%; height: 450px;"
 ></canvas>
 
@@ -171,6 +178,8 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
   data-sort-dir="desc"
   data-limit="10"
   data-title="Lakers Best Rolling 5-Year Runs (Top 10)"
+  data-wins-color="rgba(168, 85, 247, 0.9)"   <!-- purple -->
+  data-losses-color="rgba(234, 179, 8, 0.9)"  <!-- gold -->
   style="max-width: 900px; width: 100%; height: 450px;"
 ></canvas>
 
@@ -289,6 +298,7 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
 
 </body>
 </html>
+
 
 
 
