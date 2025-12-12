@@ -116,6 +116,8 @@ body {
 
 /* Navigation */
 
+/* Navigation (clear text contrast + cleaner "tab" look) */
+
 .main-nav {
   display: flex;
   gap: 1rem;
@@ -123,21 +125,51 @@ body {
 
 .main-nav a {
   text-decoration: none;
-  color: inherit;
-  padding: 0.35rem 0.7rem;
+  color: var(--text);
+  padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+
+  /* “tab” feel */
+  background: transparent;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.25);
+
+  transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease, color 0.18s ease;
 }
 
+/* Hover bubble: distinct but still light */
 .main-nav a:hover {
   background: var(--accent-soft);
-  box-shadow: inset 0 0 0 1px var(--accent);
+  box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.55);
   transform: translateY(-1px);
+  color: var(--text);
 }
 
+/* Active bubble: ALWAYS readable */
 .main-nav a.active {
-  background: var(--accent-strong);
-  color: white;
+  background: rgba(37, 99, 235, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.85);
+  color: #0b1220;            /* dark text on light active bubble */
+  font-weight: 600;
+}
+
+/* Dark mode tuning */
+@media (prefers-color-scheme: dark) {
+  .main-nav a {
+    color: #e5e7eb;
+    box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.22);
+  }
+
+  .main-nav a:hover {
+    background: rgba(96, 165, 250, 0.18);
+    box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.65);
+    color: #e5e7eb;
+  }
+
+  .main-nav a.active {
+    background: rgba(96, 165, 250, 0.22);
+    box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.9);
+    color: #e5e7eb;          /* light text on dark active bubble */
+  }
 }
 
 /* =====================
@@ -267,6 +299,7 @@ body {
     flex-wrap: wrap;
   }
 }
+
 
 
 
