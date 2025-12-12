@@ -85,19 +85,91 @@ ORDER BY avg_price DESC;</code></pre>
 <h2>Results & Visuals</h2>
 
 <h3>📈 Average Selling Price by Month (2015)</h3>
-<img src="images/avg_price_over_time.png" width="100%">
+<canvas
+  data-chart="bar"
+  data-csv="data/vehicle/avg_price_by_month_2015.csv"
+  data-label-col="MONTH"
+  data-y-col="AVG_PRICE"
+  data-y-label="Average Price ($)"
+  data-sort-col="MONTH_NUM"
+  data-sort-dir="asc"
+  data-title="Average Selling Price by Month (2015)"
+  data-bar-color="rgba(59, 130, 246, 0.9)"
+  style="max-width: 900px; width: 100%; height: 450px;"
+></canvas>
 
 <h3>🚘 Top 10 Best-Selling Car Models</h3>
-<img src="images/top_selling_car_models.png" width="100%">
+<canvas
+  data-chart="bar"
+  data-csv="data/vehicle/top_10_models_by_sales.csv"
+  data-label-col="MODEL"
+  data-y-col="SALES_COUNT"
+  data-y-label="Units Sold"
+  data-sort-col="SALES_COUNT"
+  data-sort-dir="desc"
+  data-limit="10"
+  data-title="Top 10 Best-Selling Models"
+  data-bar-color="rgba(34, 197, 94, 0.9)"
+  style="max-width: 900px; width: 100%; height: 450px;"
+></canvas>
 
-<h3>⏱️ Odometer vs Sales & Price</h3>
-<img src="images/odometer_vs_number_of_sales_and_price.png" width="100%">
+<h3>⏱️ Odometer vs Sales Volume (Binned)</h3>
+<canvas
+  data-chart="bar"
+  data-csv="data/vehicle/odometer_bins_sales.csv"
+  data-label-col="ODOMETER_BIN"
+  data-y-col="SALES_COUNT"
+  data-y-label="Sales Count"
+  data-sort-col="BIN_ORDER"
+  data-sort-dir="asc"
+  data-title="Sales Count by Odometer Range"
+  data-bar-color="rgba(100, 116, 139, 0.9)"
+  style="max-width: 900px; width: 100%; height: 450px;"
+></canvas>
 
-<h3>🗺️ Number of Car Sales by State</h3>
-<img src="images/car_sales_by_state.png" width="100%">
+<h3>💰 Odometer vs Average Price (Binned)</h3>
+<canvas
+  data-chart="bar"
+  data-csv="data/vehicle/odometer_bins_avg_price.csv"
+  data-label-col="ODOMETER_BIN"
+  data-y-col="AVG_PRICE"
+  data-y-label="Average Price ($)"
+  data-sort-col="BIN_ORDER"
+  data-sort-dir="asc"
+  data-title="Average Price by Odometer Range"
+  data-bar-color="rgba(168, 85, 247, 0.9)"
+  style="max-width: 900px; width: 100%; height: 450px;"
+></canvas>
+
+<h3>🗺️ Number of Car Sales by State (Top 15)</h3>
+<canvas
+  data-chart="bar"
+  data-csv="data/vehicle/sales_by_state.csv"
+  data-label-col="STATE"
+  data-y-col="SALES_COUNT"
+  data-y-label="Sales Count"
+  data-sort-col="SALES_COUNT"
+  data-sort-dir="desc"
+  data-limit="15"
+  data-title="Car Sales by State (Top 15)"
+  data-bar-color="rgba(239, 68, 68, 0.9)"
+  style="max-width: 900px; width: 100%; height: 450px;"
+></canvas>
 
 <h3>🚗 Average Price by Body Type</h3>
-<img src="images/avg_price_by_body_type.png" width="100%">
+<canvas
+  data-chart="bar"
+  data-csv="data/vehicle/avg_price_by_body_type.csv"
+  data-label-col="BODY_TYPE"
+  data-y-col="AVG_PRICE"
+  data-y-label="Average Price ($)"
+  data-sort-col="AVG_PRICE"
+  data-sort-dir="desc"
+  data-title="Average Price by Body Type"
+  data-bar-color="rgba(234, 179, 8, 0.9)"
+  style="max-width: 900px; width: 100%; height: 450px;"
+></canvas>
+
 </section>
 
 <section class="article-section">
@@ -128,10 +200,19 @@ ORDER BY avg_price DESC;</code></pre>
   </div>
 </footer>
 
+<!-- Libraries (order matters) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+<!-- Same chart builder used on your NBA page -->
+<script src="charts.js"></script>
+
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
 </html>
+
+
 
