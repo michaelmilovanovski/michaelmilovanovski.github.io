@@ -94,6 +94,7 @@ body {
   background: linear-gradient(to bottom, rgba(2, 6, 23, 0.94), rgba(2, 6, 23, 0.9));
   border-bottom: 1px solid rgba(148, 163, 184, 0.25);
   color: #e5e7eb;
+  transition: background 0.25s ease, border-color 0.25s ease;
 }
 
 @media (prefers-color-scheme: light) {
@@ -110,6 +111,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 0;
+  transition: padding 0.25s ease;
 }
 
 .logo-area {
@@ -118,7 +120,7 @@ body {
   gap: 0.75rem;
 }
 
-/* NEW: Name block + accent + underline */
+/* Name block + accent + underline */
 
 .name-block {
   display: flex;
@@ -147,14 +149,8 @@ body {
 }
 
 @keyframes underlineGrow {
-  from {
-    width: 0;
-    opacity: 0;
-  }
-  to {
-    width: 64px;
-    opacity: 1;
-  }
+  from { width: 0; opacity: 0; }
+  to { width: 64px; opacity: 1; }
 }
 
 .site-subtitle {
@@ -163,7 +159,6 @@ body {
   color: rgba(148, 163, 184, 0.9);
 }
 
-/* Keep subtitle readable in light mode header */
 @media (prefers-color-scheme: light) {
   .site-subtitle {
     color: rgba(15, 23, 42, 0.65);
@@ -194,11 +189,24 @@ body {
   color: white;
 }
 
-/* In light mode, active white text can reduce contrast—use header text color */
 @media (prefers-color-scheme: light) {
   .main-nav a.active {
     color: #020617;
   }
+}
+
+/* NEW: Shrink header on scroll */
+
+.site-header.shrink .header-inner {
+  padding: 0.5rem 0;
+}
+
+.site-header.shrink .underline {
+  margin: 4px 0 6px 0;
+}
+
+.site-header.shrink .site-subtitle {
+  font-size: 0.75rem;
 }
 
 /* Hero */
@@ -564,5 +572,7 @@ body {
     flex-wrap: wrap;
   }
 }
+
+
 
 
