@@ -121,7 +121,7 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
 <h3>🔺 Largest Win Increase From Previous Season (Interactive)</h3>
 <canvas
   data-chart="bar"
-  data-csv="data/largest_win_increase_from_previous_season.csv"
+  data-csv="/data/largest_win_increase_from_previous_season.csv"
   data-label-col="TEAM_NAME"
   data-season-col="SEASON"
   data-y-col="WINS_INCREASE"
@@ -130,8 +130,10 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
   data-sort-dir="desc"
   data-limit="10"
   data-title="Largest Win Increase From Previous Season (Top 10)"
+  data-bar-color="rgba(59, 130, 246, 0.9)"
   style="max-width: 900px; width: 100%; height: 450px;"
 ></canvas>
+
 
 <h3>📊 Top Records Over a 5-Year Span (Interactive)</h3>
 <canvas
@@ -155,14 +157,17 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
 <h3>📈 Total Wins & Losses (Interactive)</h3>
 <canvas
   data-chart="wins-losses"
-  data-csv="data/total_wins_and_losses.csv"
+  data-csv="/data/total_wins_and_losses.csv"
   data-label-col="TEAM_NAME"
   data-wins-col="WINS"
   data-losses-col="LOSSES"
   data-limit="10"
   data-title="Total Wins & Losses (Top 10 Franchises)"
+  data-wins-color="rgba(34, 197, 94, 0.9)"
+  data-losses-color="rgba(100, 116, 139, 0.9)"
   style="max-width: 900px; width: 100%; height: 450px;"
 ></canvas>
+
 
 <h3>🟣🟨 Lakers’ Best 5-Year Run (Interactive)</h3>
 <canvas
@@ -298,6 +303,7 @@ FETCH FIRST 5 ROWS ONLY;</code></pre>
 
 </body>
 </html>
+
 
 
 
