@@ -191,7 +191,8 @@ async function buildSimpleBar(canvas) {
   const yCol = canvas.dataset.yCol;
   const yLabel = canvas.dataset.yLabel || yCol;
   const title = canvas.dataset.title || "";
-  const colors = canvas.dataset.colors ? canvas.dataset.colors.split(",") : ["#3498db"];
+  const colorsRaw = canvas.dataset.colors ? canvas.dataset.colors.split(",") : ["#3498db"];
+  const colors = colorsRaw.map(c => c.trim());
   const yAxisLabel = canvas.dataset.yAxisLabel || "";
 
   const labels = rows.map(r => r[labelCol]);
@@ -209,18 +210,19 @@ async function buildSimpleBar(canvas) {
         label: yLabel,
         data: vals,
         backgroundColor: bgColors,
-        borderColor: bgColors.map(c => c.replace("0.8", "1")),
-        borderWidth: 1
+        borderColor: bgColors.map(c => c.replace(/[\d.]+\)$/, "1)")),
+        borderWidth: 2
       }],
     },
     options: {
       responsive: true,
+      maintainAspectRatio: true,
       plugins: {
         title: { display: !!title, text: title, font: { size: 16, weight: "bold" } },
         legend: { display: false },
         tooltip: {
           callbacks: {
-            label: (ctx) => `${ctx.parsed.y}${canvas.dataset.yUnit || ""}`
+            label: (ctx) => `${ctx.parsed.y.toLocaleString()}${canvas.dataset.yUnit || ""}`
           }
         }
       },
@@ -296,32 +298,35 @@ async function buildRocCurves(canvas) {
   const rows = await loadCsv(canvas.dataset.csv);
   const title = canvas.dataset.title || "";
 
-  const fpr = rows.map(r => r.FPR);
   const colors = ["#3498db", "#2ecc71", "#e74c3c"];
   const modelNames = ["Logistic Regression (AUC=0.842)", "Random Forest (AUC=0.839)", "XGBoost (AUC=0.841)"];
   const tprCols = ["TPR_LR", "TPR_RF", "TPR_XGB"];
 
   const datasets = tprCols.map((col, i) => ({
     label: modelNames[i],
-    data: rows.map((r, idx) => ({ x: fpr[idx], y: r[col] })),
+    data: rows.map(r => ({ x: r.FPR, y: r[col] })),
     borderColor: colors[i],
-    backgroundColor: colors[i],
-    borderWidth: 2.5,
+    backgroundColor: colors[i] + "33",
+    borderWidth: 3,
     fill: false,
-    tension: 0.3,
-    pointRadius: 0,
-    pointHoverRadius: 5
+    tension: 0.4,
+    pointRadius: 4,
+    pointHoverRadius: 8,
+    pointBackgroundColor: colors[i],
+    pointBorderColor: "#fff",
+    pointBorderWidth: 2
   }));
 
   // Add diagonal reference line
   datasets.push({
     label: "Random Classifier",
     data: [{ x: 0, y: 0 }, { x: 1, y: 1 }],
-    borderColor: "#888",
-    borderDash: [5, 5],
-    borderWidth: 1.5,
+    borderColor: "#999",
+    borderDash: [8, 4],
+    borderWidth: 2,
     fill: false,
-    pointRadius: 0
+    pointRadius: 0,
+    pointHoverRadius: 0
   });
 
   const ctx = get2dContext(canvas);
@@ -332,22 +337,37 @@ async function buildRocCurves(canvas) {
     data: { datasets },
     options: {
       responsive: true,
+      maintainAspectRatio: true,
+      aspectRatio: 1.2,
+      interaction: {
+        mode: "nearest",
+        intersect: false
+      },
       plugins: {
         title: { display: !!title, text: title, font: { size: 16, weight: "bold" } },
         legend: {
           position: "bottom",
-          labels: { padding: 15, usePointStyle: true }
+          labels: { padding: 20, usePointStyle: true, pointStyle: "circle" }
+        },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => `${ctx.dataset.label}: TPR=${ctx.parsed.y.toFixed(3)} at FPR=${ctx.parsed.x.toFixed(3)}`
+          }
         }
       },
       scales: {
         x: {
           type: "linear",
           min: 0, max: 1,
-          title: { display: true, text: "False Positive Rate" }
+          title: { display: true, text: "False Positive Rate", font: { size: 12 } },
+          ticks: { stepSize: 0.2 },
+          grid: { color: "rgba(0,0,0,0.1)" }
         },
         y: {
           min: 0, max: 1,
-          title: { display: true, text: "True Positive Rate" }
+          title: { display: true, text: "True Positive Rate", font: { size: 12 } },
+          ticks: { stepSize: 0.2 },
+          grid: { color: "rgba(0,0,0,0.1)" }
         },
       },
     },
@@ -368,13 +388,21 @@ async function buildHorizontalBar(canvas) {
   const labels = rows.map(r => r[labelCol]);
   const vals = rows.map(r => r[yCol]);
 
-  // Generate gradient colors
+  // Generate gradient colors from purple to green
   const colorScale = labels.map((_, i) => {
-    const ratio = i / (labels.length - 1);
-    const r = Math.round(68 + ratio * (34 - 68));
-    const g = Math.round(1 + ratio * (139 - 1));
-    const b = Math.round(84 + ratio * (34 - 84));
+    const ratio = i / Math.max(labels.length - 1, 1);
+    const r = Math.round(142 - ratio * 100);
+    const g = Math.round(68 + ratio * 136);
+    const b = Math.round(173 - ratio * 80);
     return `rgba(${r}, ${g}, ${b}, 0.85)`;
+  });
+
+  const borderColors = labels.map((_, i) => {
+    const ratio = i / Math.max(labels.length - 1, 1);
+    const r = Math.round(142 - ratio * 100);
+    const g = Math.round(68 + ratio * 136);
+    const b = Math.round(173 - ratio * 80);
+    return `rgba(${r}, ${g}, ${b}, 1)`;
   });
 
   const ctx = get2dContext(canvas);
@@ -388,13 +416,14 @@ async function buildHorizontalBar(canvas) {
         label: "Importance",
         data: vals,
         backgroundColor: colorScale,
-        borderColor: colorScale.map(c => c.replace("0.85", "1")),
-        borderWidth: 1
+        borderColor: borderColors,
+        borderWidth: 2
       }],
     },
     options: {
       indexAxis: "y",
       responsive: true,
+      maintainAspectRatio: true,
       plugins: {
         title: { display: !!title, text: title, font: { size: 16, weight: "bold" } },
         legend: { display: false },
@@ -407,10 +436,12 @@ async function buildHorizontalBar(canvas) {
       scales: {
         x: {
           beginAtZero: true,
-          title: { display: true, text: "Importance" }
+          title: { display: true, text: "Importance" },
+          grid: { color: "rgba(0,0,0,0.1)" }
         },
         y: {
-          ticks: { font: { size: 11 } }
+          ticks: { font: { size: 11 } },
+          grid: { display: false }
         },
       },
     },
