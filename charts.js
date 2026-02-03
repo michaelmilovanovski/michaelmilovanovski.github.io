@@ -191,7 +191,7 @@ async function buildSimpleBar(canvas) {
   const yCol = canvas.dataset.yCol;
   const yLabel = canvas.dataset.yLabel || yCol;
   const title = canvas.dataset.title || "";
-  const colorsRaw = canvas.dataset.colors ? canvas.dataset.colors.split(",") : ["#3498db"];
+  const colorsRaw = canvas.dataset.colors ? canvas.dataset.colors.split(";") : ["#3498db"];
   const colors = colorsRaw.map(c => c.trim());
   const yAxisLabel = canvas.dataset.yAxisLabel || "";
 
