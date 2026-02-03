@@ -60,9 +60,20 @@
         </p>
       </section>
 
-      <!-- RESULTS -->
+      <!-- CHURN DISTRIBUTION -->
       <section class="article-section">
-        <h2>Results</h2>
+        <h2>The Problem: 26.5% Churn Rate</h2>
+        <img src="images/churn/churn_distribution.png" alt="Churn Distribution Chart" class="article-image" />
+        <p>
+          Roughly 1 in 4 customers left the service. This represents significant revenue loss
+          and highlights the need for proactive retention strategies.
+        </p>
+      </section>
+
+      <!-- MODEL RESULTS -->
+      <section class="article-section">
+        <h2>Model Performance</h2>
+        <img src="images/churn/model_comparison.png" alt="Model Comparison Chart" class="article-image" />
         <p>
           Three models were trained and compared. Logistic Regression achieved the best
           overall performance:
@@ -73,9 +84,70 @@
           <li><strong>Precision:</strong> 66.0%</li>
           <li><strong>Recall:</strong> 56.1% (identifies majority of churners)</li>
         </ul>
+      </section>
+
+      <!-- ROC CURVES -->
+      <section class="article-section">
+        <h2>ROC Curves</h2>
+        <img src="images/churn/roc_curves.png" alt="ROC Curves" class="article-image" />
         <p>
-          The model can identify 210 of 374 churners in the test set, representing
-          potential savings of $52,500 at $500 average customer value.
+          All three models show strong discrimination ability with AUC scores above 0.83,
+          significantly better than random classification.
+        </p>
+      </section>
+
+      <!-- FEATURE IMPORTANCE -->
+      <section class="article-section">
+        <h2>What Drives Churn?</h2>
+        <img src="images/churn/feature_importance.png" alt="Feature Importance Chart" class="article-image" />
+        <p>
+          The model identified contract type and internet service as the strongest predictors
+          of churn, followed by tenure and payment method.
+        </p>
+      </section>
+
+      <!-- CONTRACT TYPE -->
+      <section class="article-section">
+        <h2>Contract Type is Critical</h2>
+        <img src="images/churn/churn_by_contract.png" alt="Churn by Contract Type" class="article-image" />
+        <p>
+          Month-to-month customers churn at <strong>42.7%</strong> compared to just
+          <strong>2.8%</strong> for two-year contracts — a 15x difference.
+        </p>
+      </section>
+
+      <!-- KEY INSIGHTS -->
+      <section class="article-section">
+        <h2>Key Insights</h2>
+        <ul>
+          <li><strong>Contract type is critical:</strong> Month-to-month customers churn at significantly higher rates than those on 1-2 year contracts.</li>
+          <li><strong>New customers are high-risk:</strong> Most churn occurs within the first 6 months of service.</li>
+          <li><strong>Fiber optic shows higher churn:</strong> Customers with fiber optic internet leave more often, suggesting potential service quality issues.</li>
+          <li><strong>Payment method matters:</strong> Electronic check users churn more frequently than automatic payment users.</li>
+          <li><strong>Support services help retention:</strong> Customers with OnlineSecurity and TechSupport services churn less.</li>
+        </ul>
+      </section>
+
+      <!-- BUSINESS RECOMMENDATIONS -->
+      <section class="article-section">
+        <h2>Business Recommendations</h2>
+        <ul>
+          <li>Target new customers with retention offers during the first 6 months</li>
+          <li>Incentivize longer contracts with discounts for 1-2 year commitments</li>
+          <li>Investigate fiber optic service quality and customer satisfaction</li>
+          <li>Encourage automatic payment enrollment to reduce churn risk</li>
+          <li>Bundle security and support features to increase customer stickiness</li>
+        </ul>
+      </section>
+
+      <!-- BUSINESS IMPACT -->
+      <section class="article-section">
+        <h2>Business Impact</h2>
+        <p>
+          Using this model on 1,409 test customers, we identified <strong>210 of 374 churners</strong>
+          (56% recall). At an average customer value of $500/year, this represents
+          <strong>$52,500 in potential savings</strong> assuming a 50% retention rate through
+          targeted intervention.
         </p>
       </section>
 
@@ -104,30 +176,6 @@
           <li><strong>Train/Test Split:</strong> 80/20 stratified split to maintain churn ratio</li>
           <li><strong>Models Trained:</strong> Logistic Regression, Random Forest, XGBoost</li>
           <li><strong>Evaluation:</strong> Accuracy, Precision, Recall, F1-Score, ROC-AUC, confusion matrices</li>
-        </ul>
-      </section>
-
-      <!-- KEY INSIGHTS -->
-      <section class="article-section">
-        <h2>Key Insights</h2>
-        <ul>
-          <li><strong>Contract type is critical:</strong> Month-to-month customers churn at significantly higher rates than those on 1-2 year contracts.</li>
-          <li><strong>New customers are high-risk:</strong> Most churn occurs within the first 6 months of service.</li>
-          <li><strong>Fiber optic shows higher churn:</strong> Customers with fiber optic internet leave more often, suggesting potential service quality issues.</li>
-          <li><strong>Payment method matters:</strong> Electronic check users churn more frequently than automatic payment users.</li>
-          <li><strong>Support services help retention:</strong> Customers with OnlineSecurity and TechSupport services churn less.</li>
-        </ul>
-      </section>
-
-      <!-- BUSINESS RECOMMENDATIONS -->
-      <section class="article-section">
-        <h2>Business Recommendations</h2>
-        <ul>
-          <li>Target new customers with retention offers during the first 6 months</li>
-          <li>Incentivize longer contracts with discounts for 1-2 year commitments</li>
-          <li>Investigate fiber optic service quality and customer satisfaction</li>
-          <li>Encourage automatic payment enrollment to reduce churn risk</li>
-          <li>Bundle security and support features to increase customer stickiness</li>
         </ul>
       </section>
 
