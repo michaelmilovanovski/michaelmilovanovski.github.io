@@ -210,8 +210,8 @@ async function buildSimpleBar(canvas) {
         label: yLabel,
         data: vals,
         backgroundColor: bgColors,
-        borderColor: bgColors.map(c => c.replace(/[\d.]+\)$/, "1)")),
-        borderWidth: 2
+        borderColor: "#333",
+        borderWidth: 1
       }],
     },
     options: {
