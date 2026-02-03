@@ -191,13 +191,26 @@ async function buildSimpleBar(canvas) {
   const yCol = canvas.dataset.yCol;
   const yLabel = canvas.dataset.yLabel || yCol;
   const title = canvas.dataset.title || "";
-  const colorsRaw = canvas.dataset.colors ? canvas.dataset.colors.split(";") : ["#3498db"];
-  const colors = colorsRaw.map(c => c.trim());
   const yAxisLabel = canvas.dataset.yAxisLabel || "";
+  const yUnit = canvas.dataset.yUnit || "";
 
   const labels = rows.map(r => r[labelCol]);
   const vals = rows.map(r => r[yCol]);
-  const bgColors = labels.map((_, i) => colors[i % colors.length]);
+
+  // Determine colors based on chart content
+  let bgColors;
+  const csvPath = canvas.dataset.csv || "";
+
+  if (csvPath.includes("churn_distribution")) {
+    // Green for retained, red for churned
+    bgColors = ["#2ecc71", "#e74c3c"];
+  } else if (csvPath.includes("churn_by_contract")) {
+    // Red, orange, green for contract types
+    bgColors = ["#e74c3c", "#f39c12", "#2ecc71"];
+  } else {
+    // Default blue
+    bgColors = labels.map(() => "#3498db");
+  }
 
   const ctx = get2dContext(canvas);
   if (!ctx) return;
@@ -210,7 +223,7 @@ async function buildSimpleBar(canvas) {
         label: yLabel,
         data: vals,
         backgroundColor: bgColors,
-        borderColor: "#333",
+        borderColor: "#222",
         borderWidth: 1
       }],
     },
@@ -222,7 +235,7 @@ async function buildSimpleBar(canvas) {
         legend: { display: false },
         tooltip: {
           callbacks: {
-            label: (ctx) => `${ctx.parsed.y.toLocaleString()}${canvas.dataset.yUnit || ""}`
+            label: (context) => `${context.parsed.y.toLocaleString()}${yUnit}`
           }
         }
       },
