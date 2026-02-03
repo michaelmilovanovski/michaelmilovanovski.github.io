@@ -180,6 +180,243 @@ async function buildBar(canvas) {
   });
 }
 
+// Simple bar chart with custom colors per bar
+async function buildSimpleBar(canvas) {
+  ensureRequired(canvas, ["csv", "labelCol", "yCol"]);
+
+  const rowsRaw = await loadCsv(canvas.dataset.csv);
+  const rows = applySortLimit(rowsRaw, canvas);
+
+  const labelCol = canvas.dataset.labelCol;
+  const yCol = canvas.dataset.yCol;
+  const yLabel = canvas.dataset.yLabel || yCol;
+  const title = canvas.dataset.title || "";
+  const colors = canvas.dataset.colors ? canvas.dataset.colors.split(",") : ["#3498db"];
+  const yAxisLabel = canvas.dataset.yAxisLabel || "";
+
+  const labels = rows.map(r => r[labelCol]);
+  const vals = rows.map(r => r[yCol]);
+  const bgColors = labels.map((_, i) => colors[i % colors.length]);
+
+  const ctx = get2dContext(canvas);
+  if (!ctx) return;
+
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels,
+      datasets: [{
+        label: yLabel,
+        data: vals,
+        backgroundColor: bgColors,
+        borderColor: bgColors.map(c => c.replace("0.8", "1")),
+        borderWidth: 1
+      }],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: !!title, text: title, font: { size: 16, weight: "bold" } },
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => `${ctx.parsed.y}${canvas.dataset.yUnit || ""}`
+          }
+        }
+      },
+      scales: {
+        y: { beginAtZero: true, title: { display: !!yAxisLabel, text: yAxisLabel } },
+        x: { ticks: { maxRotation: 45, minRotation: 0 } },
+      },
+    },
+  });
+}
+
+// Model comparison grouped bar chart
+async function buildModelComparison(canvas) {
+  ensureRequired(canvas, ["csv"]);
+
+  const rows = await loadCsv(canvas.dataset.csv);
+  const title = canvas.dataset.title || "";
+
+  const models = rows.map(r => r.MODEL);
+  const metrics = ["ACCURACY", "PRECISION", "RECALL", "F1_SCORE", "ROC_AUC"];
+  const metricLabels = ["Accuracy", "Precision", "Recall", "F1-Score", "ROC-AUC"];
+  const colors = ["#3498db", "#2ecc71", "#e74c3c"];
+
+  const datasets = models.map((model, i) => ({
+    label: model,
+    data: metrics.map(m => rows[i][m]),
+    backgroundColor: colors[i % colors.length],
+    borderColor: colors[i % colors.length],
+    borderWidth: 1
+  }));
+
+  const ctx = get2dContext(canvas);
+  if (!ctx) return;
+
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: metricLabels,
+      datasets
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        title: { display: !!title, text: title, font: { size: 16, weight: "bold" } },
+        legend: {
+          position: "bottom",
+          labels: { padding: 20, usePointStyle: true }
+        },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(3)}`
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 1,
+          title: { display: true, text: "Score" },
+          ticks: { callback: (v) => v.toFixed(1) }
+        },
+        x: { ticks: { maxRotation: 45, minRotation: 0 } },
+      },
+    },
+  });
+}
+
+// ROC Curves line chart
+async function buildRocCurves(canvas) {
+  ensureRequired(canvas, ["csv"]);
+
+  const rows = await loadCsv(canvas.dataset.csv);
+  const title = canvas.dataset.title || "";
+
+  const fpr = rows.map(r => r.FPR);
+  const colors = ["#3498db", "#2ecc71", "#e74c3c"];
+  const modelNames = ["Logistic Regression (AUC=0.842)", "Random Forest (AUC=0.839)", "XGBoost (AUC=0.841)"];
+  const tprCols = ["TPR_LR", "TPR_RF", "TPR_XGB"];
+
+  const datasets = tprCols.map((col, i) => ({
+    label: modelNames[i],
+    data: rows.map((r, idx) => ({ x: fpr[idx], y: r[col] })),
+    borderColor: colors[i],
+    backgroundColor: colors[i],
+    borderWidth: 2.5,
+    fill: false,
+    tension: 0.3,
+    pointRadius: 0,
+    pointHoverRadius: 5
+  }));
+
+  // Add diagonal reference line
+  datasets.push({
+    label: "Random Classifier",
+    data: [{ x: 0, y: 0 }, { x: 1, y: 1 }],
+    borderColor: "#888",
+    borderDash: [5, 5],
+    borderWidth: 1.5,
+    fill: false,
+    pointRadius: 0
+  });
+
+  const ctx = get2dContext(canvas);
+  if (!ctx) return;
+
+  new Chart(ctx, {
+    type: "line",
+    data: { datasets },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: !!title, text: title, font: { size: 16, weight: "bold" } },
+        legend: {
+          position: "bottom",
+          labels: { padding: 15, usePointStyle: true }
+        }
+      },
+      scales: {
+        x: {
+          type: "linear",
+          min: 0, max: 1,
+          title: { display: true, text: "False Positive Rate" }
+        },
+        y: {
+          min: 0, max: 1,
+          title: { display: true, text: "True Positive Rate" }
+        },
+      },
+    },
+  });
+}
+
+// Horizontal bar chart for feature importance
+async function buildHorizontalBar(canvas) {
+  ensureRequired(canvas, ["csv", "labelCol", "yCol"]);
+
+  const rowsRaw = await loadCsv(canvas.dataset.csv);
+  const rows = applySortLimit(rowsRaw, canvas);
+
+  const labelCol = canvas.dataset.labelCol;
+  const yCol = canvas.dataset.yCol;
+  const title = canvas.dataset.title || "";
+
+  const labels = rows.map(r => r[labelCol]);
+  const vals = rows.map(r => r[yCol]);
+
+  // Generate gradient colors
+  const colorScale = labels.map((_, i) => {
+    const ratio = i / (labels.length - 1);
+    const r = Math.round(68 + ratio * (34 - 68));
+    const g = Math.round(1 + ratio * (139 - 1));
+    const b = Math.round(84 + ratio * (34 - 84));
+    return `rgba(${r}, ${g}, ${b}, 0.85)`;
+  });
+
+  const ctx = get2dContext(canvas);
+  if (!ctx) return;
+
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels,
+      datasets: [{
+        label: "Importance",
+        data: vals,
+        backgroundColor: colorScale,
+        borderColor: colorScale.map(c => c.replace("0.85", "1")),
+        borderWidth: 1
+      }],
+    },
+    options: {
+      indexAxis: "y",
+      responsive: true,
+      plugins: {
+        title: { display: !!title, text: title, font: { size: 16, weight: "bold" } },
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => `Importance: ${ctx.parsed.x.toFixed(3)}`
+          }
+        }
+      },
+      scales: {
+        x: {
+          beginAtZero: true,
+          title: { display: true, text: "Importance" }
+        },
+        y: {
+          ticks: { font: { size: 11 } }
+        },
+      },
+    },
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("canvas[data-chart='wins-losses']").forEach(c => {
     buildWinsLosses(c).catch(err => {
@@ -191,6 +428,34 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("canvas[data-chart='bar']").forEach(c => {
     buildBar(c).catch(err => {
       console.error("bar chart failed:", err);
+      console.error("canvas dataset:", c.dataset);
+    });
+  });
+
+  document.querySelectorAll("canvas[data-chart='simple-bar']").forEach(c => {
+    buildSimpleBar(c).catch(err => {
+      console.error("simple-bar chart failed:", err);
+      console.error("canvas dataset:", c.dataset);
+    });
+  });
+
+  document.querySelectorAll("canvas[data-chart='model-comparison']").forEach(c => {
+    buildModelComparison(c).catch(err => {
+      console.error("model-comparison chart failed:", err);
+      console.error("canvas dataset:", c.dataset);
+    });
+  });
+
+  document.querySelectorAll("canvas[data-chart='roc-curves']").forEach(c => {
+    buildRocCurves(c).catch(err => {
+      console.error("roc-curves chart failed:", err);
+      console.error("canvas dataset:", c.dataset);
+    });
+  });
+
+  document.querySelectorAll("canvas[data-chart='horizontal-bar']").forEach(c => {
+    buildHorizontalBar(c).catch(err => {
+      console.error("horizontal-bar chart failed:", err);
       console.error("canvas dataset:", c.dataset);
     });
   });

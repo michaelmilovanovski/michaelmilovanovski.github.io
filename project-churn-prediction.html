@@ -62,8 +62,18 @@
 
       <!-- CHURN DISTRIBUTION -->
       <section class="article-section">
-        <h2>The Problem: 26.5% Churn Rate</h2>
-        <img src="images/churn/churn_distribution.svg" alt="Churn Distribution Chart" style="max-width: 700px; width: 100%; height: auto; display: block; margin: 1rem 0;" />
+        <h2>The Problem: 26.5% Churn Rate (Interactive)</h2>
+        <canvas
+          data-chart="simple-bar"
+          data-csv="data/churn/churn_distribution.csv"
+          data-label-col="STATUS"
+          data-y-col="COUNT"
+          data-y-label="Customers"
+          data-y-axis-label="Number of Customers"
+          data-title="Customer Churn Distribution"
+          data-colors="rgba(46, 204, 113, 0.8),rgba(231, 76, 60, 0.8)"
+          style="max-width: 700px; width: 100%; height: 350px;"
+        ></canvas>
         <p>
           Roughly 1 in 4 customers left the service. This represents significant revenue loss
           and highlights the need for proactive retention strategies.
@@ -72,8 +82,13 @@
 
       <!-- MODEL RESULTS -->
       <section class="article-section">
-        <h2>Model Performance</h2>
-        <img src="images/churn/model_comparison.svg" alt="Model Comparison Chart" style="max-width: 800px; width: 100%; height: auto; display: block; margin: 1rem 0;" />
+        <h2>Model Performance (Interactive)</h2>
+        <canvas
+          data-chart="model-comparison"
+          data-csv="data/churn/model_comparison.csv"
+          data-title="Model Performance Comparison"
+          style="max-width: 800px; width: 100%; height: 400px;"
+        ></canvas>
         <p>
           Three models were trained and compared. Logistic Regression achieved the best
           overall performance:
@@ -88,8 +103,13 @@
 
       <!-- ROC CURVES -->
       <section class="article-section">
-        <h2>ROC Curves</h2>
-        <img src="images/churn/roc_curves.svg" alt="ROC Curves" style="max-width: 650px; width: 100%; height: auto; display: block; margin: 1rem 0;" />
+        <h2>ROC Curves (Interactive)</h2>
+        <canvas
+          data-chart="roc-curves"
+          data-csv="data/churn/roc_curves.csv"
+          data-title="ROC Curves - Model Comparison"
+          style="max-width: 700px; width: 100%; height: 400px;"
+        ></canvas>
         <p>
           All three models show strong discrimination ability with AUC scores above 0.83,
           significantly better than random classification.
@@ -98,8 +118,17 @@
 
       <!-- FEATURE IMPORTANCE -->
       <section class="article-section">
-        <h2>What Drives Churn?</h2>
-        <img src="images/churn/feature_importance.svg" alt="Feature Importance Chart" style="max-width: 800px; width: 100%; height: auto; display: block; margin: 1rem 0;" />
+        <h2>What Drives Churn? (Interactive)</h2>
+        <canvas
+          data-chart="horizontal-bar"
+          data-csv="data/churn/feature_importance.csv"
+          data-label-col="FEATURE"
+          data-y-col="IMPORTANCE"
+          data-sort-col="IMPORTANCE"
+          data-sort-dir="asc"
+          data-title="Top 10 Features for Predicting Churn"
+          style="max-width: 800px; width: 100%; height: 400px;"
+        ></canvas>
         <p>
           The model identified contract type and internet service as the strongest predictors
           of churn, followed by tenure and payment method.
@@ -108,8 +137,19 @@
 
       <!-- CONTRACT TYPE -->
       <section class="article-section">
-        <h2>Contract Type is Critical</h2>
-        <img src="images/churn/churn_by_contract.svg" alt="Churn by Contract Type" style="max-width: 700px; width: 100%; height: auto; display: block; margin: 1rem 0;" />
+        <h2>Contract Type is Critical (Interactive)</h2>
+        <canvas
+          data-chart="simple-bar"
+          data-csv="data/churn/churn_by_contract.csv"
+          data-label-col="CONTRACT"
+          data-y-col="CHURN_RATE"
+          data-y-label="Churn Rate"
+          data-y-axis-label="Churn Rate (%)"
+          data-y-unit="%"
+          data-title="Churn Rate by Contract Type"
+          data-colors="rgba(231, 76, 60, 0.8),rgba(243, 156, 18, 0.8),rgba(46, 204, 113, 0.8)"
+          style="max-width: 700px; width: 100%; height: 350px;"
+        ></canvas>
         <p>
           Month-to-month customers churn at <strong>42.7%</strong> compared to just
           <strong>2.8%</strong> for two-year contracts — a 15x difference.
@@ -214,6 +254,14 @@
   </div>
 </footer>
 
+<!-- Libraries (order matters) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+<!-- Your chart builder -->
+<script src="charts.js"></script>
+
+<!-- Footer year -->
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
